@@ -284,6 +284,12 @@ dialog.studio-dlg::backdrop{background:rgba(5,5,10,.55); backdrop-filter:blur(6p
 .sd-close{position:absolute; top:12px; right:12px; z-index:2; width:34px; height:34px; border-radius:50%; border:0; background:rgba(0,0,0,.45); color:#fff; font-size:18px; line-height:1; cursor:pointer; backdrop-filter:blur(6px)}
 .roles [data-studio]{cursor:pointer}
 .roles [data-studio]:hover span:first-child{color:var(--accent)}
+
+/* case-study transition */
+.pt{position:fixed; z-index:9500; overflow:hidden; pointer-events:none; will-change:left,top,width,height}
+.pt img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
+.curtain{position:fixed; inset:0; z-index:9400; background:var(--bg); pointer-events:none}
 </style>
 </head>
 <body>
@@ -329,13 +335,13 @@ dialog.studio-dlg::backdrop{background:rgba(5,5,10,.55); backdrop-filter:blur(6p
     <p class="label rv">Selected work</p>
     <h2 class="rv split">Minecraft projects I produced.</h2>
     <div class="grid">
-      <a class="card rv" href="https://chunk.gg/@aurrora/vehicles" target="_blank" rel="noopener">
+      <a class="card rv" href="work/vehicles/" data-case="vehicles">
         <div class="cover"><img loading="lazy" decoding="async" src="assets/2f011dd30c.webp" alt="Vehicles key art"></div>
-        <div class="body"><span class="meta">Vehicles, Content pack, 2025</span><p>20+ customisable vehicles and a full road-sign system. I documented all ~279 pieces of content, designed the crafting system, and split assets into a base and high-res pack to beat a texture-memory limit.</p><span class="more">View release <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+        <div class="body"><span class="meta">Vehicles, Content pack, 2025</span><p>20+ customisable vehicles and a full road-sign system. I documented all ~279 pieces of content, designed the crafting system, and split assets into a base and high-res pack to beat a texture-memory limit.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
-      <a class="card rv" href="https://chunk.gg/@novasoft/ultimate-tnt" target="_blank" rel="noopener">
+      <a class="card rv" href="work/ultimate-tnt/" data-case="ultimate-tnt">
         <div class="cover"><img loading="lazy" decoding="async" src="assets/03007f8849.webp" alt="Ultimate TNT key art"></div>
-        <div class="body"><span class="meta">Ultimate TNT, Content pack, with Novasoft</span><p>Took the pack through Marketplace review, handled the reviewer feedback and directed redesigns of four TNT variants until it was approved.</p><span class="more">View release <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+        <div class="body"><span class="meta">Ultimate TNT, Content pack, with Novasoft</span><p>Took the pack through Marketplace review, handled the reviewer feedback and directed redesigns of four TNT variants until it was approved.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
       <a class="card rv" href="https://bedrockexplorer.com/@aurrora/modern-home-roleplay" target="_blank" rel="noopener">
         <div class="cover"><img loading="lazy" decoding="async" src="assets/215e858fd4.webp" alt="Modern Home key art"></div>
@@ -616,6 +622,32 @@ document.getElementById("discord").addEventListener("click",e=>{const b=e.curren
 const fm=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Colombo",hour:"2-digit",minute:"2-digit"});
 const tk=()=>document.getElementById("clock").textContent="Colombo, "+fm.format(new Date());
 tk(); setInterval(tk,30000);
+</script>
+<script>
+(function(){
+  const RED=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const ss={get(k){try{return sessionStorage.getItem(k)}catch(e){return null}},set(k,v){try{sessionStorage.setItem(k,v)}catch(e){}},del(k){try{sessionStorage.removeItem(k)}catch(e){}}};
+  if(ss.get("pt-back")){ss.del("pt-back"); if(!RED){const c=document.createElement("div"); c.className="curtain"; document.body.appendChild(c);
+    c.animate([{opacity:1},{opacity:0}],{duration:600,easing:"ease",fill:"forwards"}).onfinish=()=>c.remove();}}
+  function heroRect(){const g=innerWidth<=700?16:28, w=Math.min(1180,innerWidth-2*g); return {left:(innerWidth-w)/2, top:84, width:w, height:w*10/23, r:innerWidth<=760?16:24}}
+  document.querySelectorAll("a.card[data-case]").forEach(a=>a.addEventListener("click",e=>{
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.button) return;
+    e.preventDefault(); ss.set("pt",a.dataset.case);
+    const img=a.querySelector(".cover img");
+    if(RED||!img){location.href=a.href; return}
+    const r=img.parentElement.getBoundingClientRect(), t=heroRect(), ease="cubic-bezier(.7,0,.2,1)", D=850;
+    const c=document.createElement("div"); c.className="pt";
+    Object.assign(c.style,{left:r.left+"px",top:r.top+"px",width:r.width+"px",height:r.height+"px",borderRadius:"24px 24px 0 0"});
+    c.innerHTML='<img src="'+(img.currentSrc||img.src)+'" alt="">';
+    document.body.appendChild(c); document.body.classList.add("leaving");
+    const st=getComputedStyle(img).transform;
+    c.firstChild.animate([{transform:st==="none"?"none":st},{transform:"none"}],{duration:D,easing:ease,fill:"forwards"});
+    c.animate([{left:r.left+"px",top:r.top+"px",width:r.width+"px",height:r.height+"px",borderRadius:"24px 24px 0 0"},
+               {left:t.left+"px",top:t.top+"px",width:t.width+"px",height:t.height+"px",borderRadius:t.r+"px"}],
+              {duration:D,easing:ease,fill:"forwards"}).onfinish=()=>{location.href=a.href};
+  }));
+  addEventListener("pageshow",e=>{if(e.persisted){document.body.classList.remove("leaving"); document.querySelectorAll(".pt").forEach(n=>n.remove())}});
+})();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4834fab508314c3cac714a8b5e0414fa"}'></script>
 </body>
