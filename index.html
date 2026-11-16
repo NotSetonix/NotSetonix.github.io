@@ -280,6 +280,31 @@ dialog.studio-dlg::backdrop{background:rgba(5,5,10,.55); backdrop-filter:blur(6p
 .sd-close{position:absolute; top:12px; right:12px; z-index:2; width:34px; height:34px; border-radius:50%; border:0; background:rgba(0,0,0,.45); color:#fff; font-size:18px; line-height:1; cursor:pointer; backdrop-filter:blur(6px)}
 .roles [data-studio]{cursor:pointer}
 .roles [data-studio]:hover span:first-child{color:var(--accent)}
+
+/* ===== scroll experience ===== */
+.hero-body,.hero header{will-change:transform,opacity}
+/* key-art wall */
+.wall{position:relative; padding:96px 0 8px; overflow:hidden; display:grid; grid-template-columns:minmax(0,1fr); gap:16px}
+.wall::before,.wall::after{content:""; position:absolute; top:0; bottom:0; width:12%; z-index:2; pointer-events:none}
+.wall::before{left:0; background:linear-gradient(90deg,var(--bg),transparent)}
+.wall::after{right:0; background:linear-gradient(-90deg,var(--bg),transparent)}
+.wrow{display:flex; gap:16px; width:max-content; will-change:transform}
+.wrow img{width:clamp(200px,24vw,330px); aspect-ratio:530/230; object-fit:cover; border-radius:14px; flex:none; box-shadow:0 20px 40px -24px rgba(0,0,0,.5)}
+.wall-cap{text-align:center; color:var(--muted); font-size:14px; margin:0 0 22px}
+/* kinetic word band */
+.kband{overflow:hidden; padding:72px 0 0; user-select:none}
+.ktrack{display:flex; gap:.5em; width:max-content; white-space:nowrap; font-size:clamp(56px,11vw,168px); font-weight:600; letter-spacing:-.04em; line-height:1; will-change:transform}
+.ktrack span{color:transparent; -webkit-text-stroke:1.5px color-mix(in srgb,var(--ink) 35%,transparent)}
+.ktrack span.f{color:var(--ink); -webkit-text-stroke:0}
+.ktrack span.g{background:linear-gradient(120deg,#7C8CFF,#C084FC 55%,#67E8F9); -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-stroke:0}
+.ktrack i{font-style:normal; color:color-mix(in srgb,var(--ink) 25%,transparent)}
+/* card image reveal */
+.card.rv .cover{clip-path:inset(14% 10% round 18px); transition:clip-path 1.2s var(--e)}
+.card.rv.in .cover{clip-path:inset(0 round 0)}
+.card.rv .cover img{scale:1.18; transition:scale 1.4s var(--e), transform 1.2s var(--e)}
+.card.rv.in .cover img{scale:1}
+@media (prefers-reduced-motion:reduce){.card.rv .cover{clip-path:none} .card.rv .cover img{scale:1}}
+
 </style>
 </head>
 <body>
@@ -321,6 +346,9 @@ dialog.studio-dlg::backdrop{background:rgba(5,5,10,.55); backdrop-filter:blur(6p
     </div>
   </section>
 
+  <section class="wall-s" aria-hidden="true" style="padding:0; margin:0 calc(50% - 50vw)">
+    <div class="wall" id="wall"><p class="wall-cap">Released on the Minecraft Marketplace</p><div class="wrow" id="wr1"></div><div class="wrow" id="wr2"></div></div>
+  </section>
   <section id="work">
     <p class="label rv">Selected work</p>
     <h2 class="rv split">Minecraft projects I produced.</h2>
@@ -369,6 +397,7 @@ dialog.studio-dlg::backdrop{background:rgba(5,5,10,.55); backdrop-filter:blur(6p
       </div>
   </section>
 
+  <div class="kband" aria-hidden="true" style="margin:0 calc(50% - 50vw)"><div class="ktrack" id="kt"></div></div>
   <section id="pipeline">
     <p class="label rv">Process</p>
     <h2 class="rv split">How I run a Minecraft project.</h2>
@@ -588,6 +617,38 @@ document.querySelectorAll(".split").forEach(h=>{h.innerHTML=h.textContent.trim()
   addEventListener("pointermove",e=>{tx=e.clientX+16; ty=e.clientY+20; const t=e.target.closest&&e.target.closest(".card, .xp a"); if(!!t!==on){on=!!t; p.classList.toggle("on",on); if(on){x=tx;y=ty}}},{passive:true});
   document.documentElement.addEventListener("mouseleave",()=>{on=false;p.classList.remove("on")});
   (function tick(){ const k=RED?1:.35; x+=(tx-x)*k; y+=(ty-y)*k; p.style.transform=`translate3d(${x}px,${y}px,0)`; requestAnimationFrame(tick)})();
+})();
+
+
+/* ---------- scroll experience ---------- */
+(function(){
+  const wr1=document.getElementById("wr1"), wr2=document.getElementById("wr2"), wall=document.getElementById("wall"), kt=document.getElementById("kt");
+  const srcs=[...new Set([...document.querySelectorAll(".card .cover img, .xp img")].map(i=>i.src))];
+  const half=Math.ceil(srcs.length/2), a=srcs.slice(0,half), b=srcs.slice(half).concat(srcs.slice(0,2));
+  const fill=(el,l)=>{el.innerHTML=[...l,...l].map(u=>`<img src="${u}" alt="" loading="lazy">`).join("")};
+  fill(wr1,a); fill(wr2,b.reverse());
+  const words=["Concept","Scope","Brief","Build","QA","Ship"], cls=["","f","","g","","f"];
+  kt.innerHTML=[0,1,2].map(()=>words.map((w,i)=>`<span class="${cls[i]}">${w}</span><i>→</i>`).join("")).join("");
+  const hb=document.querySelector(".hero-body"), hh=document.querySelector(".hero header"), hero=document.querySelector(".hero"), sc=document.querySelector(".hero .scroll");
+  let last=scrollY, vel=0, kx=0, ticking=false;
+  function frame(){
+    const y=scrollY, H=innerHeight;
+    vel+= ((y-last)-vel)*.15; last=y;
+    // hero exit
+    const hp=Math.min(1,Math.max(0,y/(hero.offsetHeight*.8)));
+    hb.style.transform=`translateY(${hp*90}px) scale(${1-hp*.06})`; hb.style.opacity=String(1-hp*1.1);
+    if(sc) sc.style.opacity=String(1-hp*3);
+    // wall
+    const r=wall.getBoundingClientRect(), p=(H-r.top)/(H+r.height);
+    if(p>-.2&&p<1.2){ wr1.style.transform=`translate3d(${-p*28}%,0,0)`; wr2.style.transform=`translate3d(${-50+p*28}%,0,0)`; }
+    // kinetic band: drifts with scroll, speeds up with scroll velocity
+    kx-= .35 + Math.min(18,Math.abs(vel))*.55;
+    const w=kt.scrollWidth/3; if(-kx>w) kx+=w;
+    kt.style.transform=`translate3d(${kx}px,0,0) skewX(${Math.max(-10,Math.min(10,-vel*.35))}deg)`;
+    requestAnimationFrame(frame);
+  }
+  if(RED){ wr2.style.transform="translateX(-30%)"; return; }
+  requestAnimationFrame(frame);
 })();
 
 /* ---------- reveal + count up ---------- */
