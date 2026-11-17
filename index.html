@@ -294,6 +294,16 @@ body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
 .grid.three .card .body{padding:18px 20px 22px}
 .grid.three .card .body p{font-size:14.5px}
 @media (max-width:900px){.grid.three{grid-template-columns:1fr}}
+
+/* floating nav */
+.floatnav{position:fixed; top:calc(env(safe-area-inset-top,0px) + 14px); left:50%; z-index:8000; display:flex; gap:4px; padding:5px; border-radius:999px;
+  background:color-mix(in srgb,var(--bg) 72%,transparent); border:1px solid var(--line); backdrop-filter:blur(16px) saturate(1.4); -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.35); transform:translate(-50%,-160%); opacity:0; transition:transform .5s cubic-bezier(.16,1,.3,1), opacity .3s; white-space:nowrap}
+.floatnav.show{transform:translate(-50%,0); opacity:1}
+.floatnav a{padding:7px 15px; border-radius:999px; font-size:14px; color:var(--muted); transition:background .2s,color .2s}
+.floatnav a:hover,.floatnav a.on{background:color-mix(in srgb,var(--ink) 9%,transparent); color:var(--ink)}
+@media (max-width:480px){.floatnav{gap:0; padding:4px}.floatnav a{padding:7px 10px; font-size:13px}}
+@media (prefers-reduced-motion:reduce){.floatnav{transition:opacity .2s}}
 </style>
 </head>
 <body>
@@ -666,6 +676,24 @@ tk(); setInterval(tk,30000);
               {duration:D,easing:ease,fill:"forwards"}).onfinish=()=>{location.href=a.href};
   }));
   addEventListener("pageshow",e=>{if(e.persisted){document.body.classList.remove("leaving"); document.querySelectorAll(".pt").forEach(n=>n.remove())}});
+})();
+</script>
+<script>
+(function(){
+  const src=document.querySelector("header nav"); if(!src) return;
+  const n=document.createElement("nav"); n.className="floatnav"; n.setAttribute("aria-label","Quick navigation"); n.innerHTML=src.innerHTML; document.body.appendChild(n);
+  const links=[...n.querySelectorAll("a")], secs=links.map(a=>document.querySelector(a.getAttribute("href")));
+  let last=scrollY, acc=0, lock=0;
+  const set=v=>{n.classList.toggle("show",v); links.forEach(a=>a.tabIndex=v?0:-1)}; set(false);
+  links.forEach(a=>a.addEventListener("click",()=>{lock=Date.now()+1200; set(false)}));
+  addEventListener("scroll",()=>{
+    const y=scrollY, d=y-last; last=y;
+    if(y<src.getBoundingClientRect().bottom+y+40&&y<200){set(false); acc=0; return}
+    if(Date.now()<lock) return;
+    acc=(d>0)===(acc>0)?acc+d:d;
+    if(acc>12) set(false); else if(acc<-12) set(true);
+    const mid=y+innerHeight*.35; let cur=-1; secs.forEach((el,i)=>{if(el&&el.offsetTop<=mid) cur=i}); links.forEach((a,i)=>a.classList.toggle("on",i===cur));
+  },{passive:true});
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4834fab508314c3cac714a8b5e0414fa"}'></script>
