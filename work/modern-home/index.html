@@ -498,7 +498,7 @@ p,li,dd{text-wrap:pretty}
 </div>
 </main>
 <a class="next" href="../dragons-keep/" data-next="dragons-keep"><div class="wrap"><div><small>Next case study</small><strong>Dragon’s Keep <svg width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></div><div class="cover"><img decoding="async" src="../../assets/ka-dragons-keep-1200.webp" alt=""></div></div></a>
-<footer><div class="wrap"><span>© 2026 Manith Liyanage (Setonix)</span><span><a href="mailto:manith122002@gmail.com">manith122002@gmail.com</a></span></div></footer>
+<footer><div class="wrap"><span>© 2026 Manith Liyanage (Setonix)</span><span><a href="#contact" data-mu="manith122002" data-md="gmail.com"><span class="etext">Email me</span></a></span></div></footer>
 <script>
 (function(){
 const RED=matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -764,6 +764,9 @@ if(rl){
   };
   addEventListener("pointerdown",down,{passive:true});
 })();
+</script>
+<script>
+document.querySelectorAll("[data-mu]").forEach(a=>{const e=a.dataset.mu+"@"+a.dataset.md; a.href="mailto:"+e; const t=a.querySelector(".etext")||a; if(a.dataset.show!=="label") t.textContent=e;});
 </script>
 </body>
 </html>
