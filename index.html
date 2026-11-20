@@ -11,9 +11,12 @@
 <link rel="canonical" href="https://notsetonix.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://notsetonix.com/">
-<meta property="og:title" content="Manith Liyanage | Technical Project Coordinator">
-<meta property="og:description" content="Portfolio of Manith (Setonix) Liyanage: digital production, project coordination and creative direction.">
-<meta property="og:image" content="https://notsetonix.com/og-image.png">
+<meta property="og:title" content="Setonix | Executive Producer, Minecraft Marketplace">
+<meta property="og:description" content="Manith Liyanage (Setonix), Executive Producer at Aurrora. Minecraft Marketplace add-ons and worlds, brief to release.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Setonix, Executive Producer, Minecraft Marketplace">
+<meta property="og:image" content="https://notsetonix.com/og-image.png?v=2">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="Setonix (Manith Liyanage), Executive Producer at Aurrora. I run Minecraft Marketplace add-ons and worlds from brief to release.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +50,7 @@ header .name i{width:10px; height:10px; border-radius:50%; background:conic-grad
 @keyframes spin{to{transform:rotate(1turn)}}
 header nav{display:flex; gap:6px; padding:5px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); backdrop-filter:blur(12px)}
 header nav a{padding:6px 14px; border-radius:999px; font-size:14px; color:rgba(255,255,255,.75); transition:background .2s,color .2s}
-header nav a:hover{background:rgba(255,255,255,.1); color:#fff}
+@media (hover:hover) and (pointer:fine){header nav a:hover{background:rgba(255,255,255,.1); color:#fff}}
 
 .hero-body{flex:1; display:flex; flex-direction:column; justify-content:center; padding:80px 0 120px}
 .pill{display:inline-flex; align-items:center; gap:8px; align-self:flex-start; padding:6px 14px 6px 10px; border-radius:999px; font-size:13.5px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.85); margin-bottom:28px; backdrop-filter:blur(10px)}
@@ -65,10 +68,10 @@ header nav a:hover{background:rgba(255,255,255,.1); color:#fff}
 .ctas{display:flex; gap:12px; flex-wrap:wrap; opacity:0; animation:fade 1s ease .8s forwards}
 .btn{display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:999px; font-weight:500; font-size:15px; transition:transform .2s, background .2s}
 .btn.primary{background:#fff; color:#09090B}
-.btn.primary:hover{transform:translateY(-2px)}
+@media (hover:hover) and (pointer:fine){.btn.primary:hover{transform:translateY(-2px)}}
 .btn.ghost{border:1px solid rgba(255,255,255,.2); color:#fff}
-.btn.ghost:hover{background:rgba(255,255,255,.08)}
-.btn svg{transition:transform .2s} .btn:hover svg{transform:translateX(3px)}
+@media (hover:hover) and (pointer:fine){.btn.ghost:hover{background:rgba(255,255,255,.08)}}
+.btn svg{transition:transform .2s} @media (hover:hover) and (pointer:fine){.btn:hover svg{transform:translateX(3px)}}
 .scroll{position:absolute; left:50%; bottom:28px; transform:translateX(-50%); z-index:3; width:22px; height:34px; border:1.5px solid rgba(255,255,255,.3); border-radius:12px}
 .scroll::after{content:""; position:absolute; left:50%; top:7px; width:3px; height:7px; margin-left:-1.5px; border-radius:2px; background:#fff; animation:wheel 1.8s infinite}
 @keyframes wheel{0%{opacity:0; transform:translateY(0)}30%{opacity:1}100%{opacity:0; transform:translateY(10px)}}
@@ -76,15 +79,15 @@ header nav a:hover{background:rgba(255,255,255,.1); color:#fff}
 /* ---------- marquee ---------- */
 .marquee{border-bottom:1px solid var(--line); overflow:hidden; padding:28px 0 30px; background:var(--bg); -webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent); mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .track{display:flex; width:max-content; animation:scroll 40s linear infinite}
-.marquee:hover .track{animation-play-state:paused}
+@media (hover:hover) and (pointer:fine){.marquee:hover .track{animation-play-state:paused}}
 .track .studio{display:flex; align-items:center; gap:14px; padding:0 36px; white-space:nowrap; font-size:clamp(17px,1.8vw,21px); font-weight:500; letter-spacing:-.015em; color:var(--muted); transition:color .3s}
-.track .studio:hover{color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.track .studio:hover{color:var(--ink)}}
 .logo{width:44px; height:44px; flex:none; border-radius:12px; display:grid; place-items:center; overflow:hidden; font-size:15px; font-weight:600; color:#fff; letter-spacing:0; filter:grayscale(1); opacity:.75; transition:filter .3s, opacity .3s}
-.track .studio:hover .logo{filter:none; opacity:1}
+@media (hover:hover) and (pointer:fine){.track .studio:hover .logo{filter:none; opacity:1}}
 .logo img{width:100%; height:100%; object-fit:cover}
 .track .studio{background:none; border:0; font:inherit; cursor:pointer; border-radius:14px}
 .track .studio .logo{filter:none; opacity:.9}
-.track .studio:hover .logo{transform:scale(1.08) rotate(-4deg)}
+@media (hover:hover) and (pointer:fine){.track .studio:hover .logo{transform:scale(1.08) rotate(-4deg)}}
 .logo{transition:transform .4s cubic-bezier(.16,1,.3,1), opacity .3s!important}
 .marquee-head{text-align:center; font-size:13.5px; color:var(--muted); margin:0 0 18px}
 @keyframes scroll{to{transform:translateX(-50%)}}
@@ -104,19 +107,19 @@ h2{font-size:clamp(30px,4vw,48px); font-weight:500; letter-spacing:-.035em; line
 .grid{display:grid; grid-template-columns:1fr 1fr; gap:24px}
 @media (max-width:760px){.grid{grid-template-columns:1fr}}
 .card{display:block; border-radius:24px; background:var(--card); border:1px solid var(--line); overflow:hidden; transition:transform .4s cubic-bezier(.16,1,.3,1), border-color .3s}
-.card:hover{transform:translateY(-6px); border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+@media (hover:hover) and (pointer:fine){.card:hover{transform:translateY(-6px); border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}}
 .cover{aspect-ratio:23/10; position:relative; overflow:hidden}
 .cover img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
-.card:hover .cover img{transform:scale(1.06)}
+@media (hover:hover) and (pointer:fine){.card:hover .cover img{transform:scale(1.06)}}
 .cover .mesh{position:absolute; inset:-20%; transition:transform 1.2s cubic-bezier(.16,1,.3,1); filter:saturate(1.1)}
-.card:hover .mesh{transform:scale(1.08) rotate(2deg)}
+@media (hover:hover) and (pointer:fine){.card:hover .mesh{transform:scale(1.08) rotate(2deg)}}
 .cover .big{position:absolute; left:24px; bottom:18px; font-size:clamp(28px,3.4vw,40px); font-weight:600; letter-spacing:-.04em; color:#fff; line-height:1; text-shadow:0 2px 30px rgba(0,0,0,.25)}
 .cover .chip{position:absolute; top:18px; left:20px; font-size:12.5px; padding:5px 11px; border-radius:999px; background:rgba(255,255,255,.18); color:#fff; backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.2)}
 .card .body{padding:22px 24px 26px}
 .card .body .meta{display:block; font-size:13.5px; color:var(--muted); margin-bottom:8px}
 .card .body p{margin:0; color:var(--muted); font-size:15.5px}
 .card .body .more{display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-size:14.5px; font-weight:500; color:var(--ink)}
-.card .body .more svg{transition:transform .25s} .card:hover .more svg{transform:translate(3px,-3px)}
+.card .body .more svg{transition:transform .25s} @media (hover:hover) and (pointer:fine){.card:hover .more svg{transform:translate(3px,-3px)}}
 
 .xp{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
 @media (max-width:900px){.xp{grid-template-columns:1fr 1fr}}
@@ -124,8 +127,8 @@ h2{font-size:clamp(30px,4vw,48px); font-weight:500; letter-spacing:-.035em; line
 .xp figure{margin:0}
 .xp .img{border-radius:18px; overflow:hidden; aspect-ratio:530/230; background:var(--card); border:1px solid var(--line)}
 .xp img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s cubic-bezier(.16,1,.3,1)}
-.xp figure:hover img{transform:scale(1.06)}
-.xp a:hover figcaption{color:var(--accent)}
+@media (hover:hover) and (pointer:fine){.xp figure:hover img{transform:scale(1.06)}}
+@media (hover:hover) and (pointer:fine){.xp a:hover figcaption{color:var(--accent)}}
 .xp figcaption{display:flex; justify-content:space-between; gap:10px; padding:12px 2px 0; font-weight:500; font-size:15px}
 .xp figcaption span{color:var(--muted); font-weight:400; font-size:14px; white-space:nowrap}
 .intro-qa{color:var(--muted); max-width:56ch; margin:-28px 0 40px}
@@ -136,8 +139,8 @@ h2{font-size:clamp(30px,4vw,48px); font-weight:500; letter-spacing:-.035em; line
 .xp figure{margin:0}
 .xp .img{border-radius:18px; overflow:hidden; aspect-ratio:530/230; background:var(--card); border:1px solid var(--line)}
 .xp img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s cubic-bezier(.16,1,.3,1)}
-.xp figure:hover img{transform:scale(1.06)}
-.xp a:hover figcaption{color:var(--accent)}
+@media (hover:hover) and (pointer:fine){.xp figure:hover img{transform:scale(1.06)}}
+@media (hover:hover) and (pointer:fine){.xp a:hover figcaption{color:var(--accent)}}
 .xp figcaption{display:flex; justify-content:space-between; gap:10px; padding:12px 2px 0; font-weight:500; font-size:15px}
 .xp figcaption span{color:var(--muted); font-weight:400; font-size:14px; white-space:nowrap}
 .intro-qa{color:var(--muted); max-width:56ch; margin:-28px 0 40px}
@@ -149,9 +152,9 @@ h2{font-size:clamp(30px,4vw,48px); font-weight:500; letter-spacing:-.035em; line
 .list li{border-top:1px solid var(--line)}
 .list li:last-child{border-bottom:1px solid var(--line)}
 .list a,.list div{display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 4px; position:relative; transition:padding .3s cubic-bezier(.16,1,.3,1)}
-.list a:hover{padding-left:14px}
+@media (hover:hover) and (pointer:fine){.list a:hover{padding-left:14px}}
 .list a::before{content:""; position:absolute; left:0; top:50%; width:6px; height:6px; margin-top:-3px; border-radius:50%; background:var(--accent); opacity:0; transition:opacity .3s}
-.list a:hover::before{opacity:1}
+@media (hover:hover) and (pointer:fine){.list a:hover::before{opacity:1}}
 .roles span:first-child{font-weight:500}
 @media (max-width:560px){.roles div{flex-direction:column; align-items:flex-start; gap:0}}
 .list span:last-child{color:var(--muted); font-size:14px; white-space:nowrap}
@@ -208,7 +211,7 @@ footer{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; pa
 .card{position:relative; will-change:transform}
 .card.tilting{transition:transform .15s ease-out, border-color .3s!important}
 .card::after{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.13),transparent 45%); opacity:0; transition:opacity .35s}
-.card:hover::after{opacity:1}
+@media (hover:hover) and (pointer:fine){.card:hover::after{opacity:1}}
 .xp figure{transition:transform .5s var(--e)}
 .xp figure.tilting{transition:transform .15s ease-out}
 
@@ -253,12 +256,12 @@ footer{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; pa
 .about .exp .roles span:last-child{white-space:normal}
 .about .exp h3.sub{margin-top:0}
 
-/* custom cursor: gradient arrow */
+@media (hover:hover) and (pointer:fine){/* custom cursor: gradient arrow */
 @media (hover:hover) and (pointer:fine){
   html, body{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238B97FF%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23C084FC%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 5 3, auto}
   a, button, [role=button], .seg button, summary, label{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2367E8F9%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238B97FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%223.4%22%20fill%3D%22%23fff%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.5%22%20stroke-width%3D%221%22/%3E%3C/svg%3E") 5 3, pointer}
   input, textarea, [contenteditable]{cursor:text}
-}
+}}
 .cursor-pill{position:fixed; left:0; top:0; z-index:10000; pointer-events:none; padding:7px 13px 7px 14px; border-radius:999px; font-size:13px; font-weight:500; color:#0B0B12; background:linear-gradient(120deg,#8B97FF,#C084FC 55%,#67E8F9); box-shadow:0 8px 24px -8px rgba(124,140,255,.7); opacity:0; transform:translate(-9999px,0) scale(.85); transition:opacity .2s, scale .25s; white-space:nowrap}
 .cursor-pill.on{opacity:1}
 
@@ -280,10 +283,10 @@ dialog.studio-dlg::backdrop{background:rgba(5,5,10,.55); backdrop-filter:blur(6p
 .sd-links{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px}
 .sd-links a{display:inline-flex; align-items:center; gap:7px; padding:10px 16px; border-radius:999px; font-size:14.5px; font-weight:500; border:1px solid var(--line)}
 .sd-links a.main{background:var(--ink); color:var(--bg); border-color:var(--ink)}
-.sd-links a:hover{transform:translateY(-1px)}
+@media (hover:hover) and (pointer:fine){.sd-links a:hover{transform:translateY(-1px)}}
 .sd-close{position:absolute; top:12px; right:12px; z-index:2; width:34px; height:34px; border-radius:50%; border:0; background:rgba(0,0,0,.45); color:#fff; font-size:18px; line-height:1; cursor:pointer; backdrop-filter:blur(6px)}
 .roles [data-studio]{cursor:pointer}
-.roles [data-studio]:hover span:first-child{color:var(--accent)}
+@media (hover:hover) and (pointer:fine){.roles [data-studio]:hover span:first-child{color:var(--accent)}}
 
 /* case-study transition */
 .pt{position:fixed; z-index:9500; overflow:hidden; pointer-events:none; will-change:left,top,width,height}
@@ -301,9 +304,47 @@ body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
   box-shadow:0 10px 30px -12px rgba(0,0,0,.35); transform:translateY(-160%); opacity:0; transition:transform .5s cubic-bezier(.16,1,.3,1), opacity .3s; white-space:nowrap}
 .floatnav.show{transform:none; opacity:1}
 .floatnav a{padding:7px 15px; border-radius:999px; font-size:14px; color:var(--muted); transition:background .2s,color .2s}
-.floatnav a:hover,.floatnav a.on{background:color-mix(in srgb,var(--ink) 9%,transparent); color:var(--ink)}
+.floatnav a.on{background:color-mix(in srgb,var(--ink) 9%,transparent); color:var(--ink)}@media (hover:hover) and (pointer:fine){.floatnav a:hover{background:color-mix(in srgb,var(--ink) 9%,transparent); color:var(--ink)}}
 @media (max-width:480px){.floatnav{gap:0; padding:4px; right:auto; left:50%; transform:translate(-50%,-160%)}.floatnav.show{transform:translate(-50%,0)}.floatnav a{padding:7px 10px; font-size:13px}}
 @media (prefers-reduced-motion:reduce){.floatnav{transition:opacity .2s}}
+
+/* ---- work rework ---- */
+.work-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px 32px; flex-wrap:wrap; margin-bottom:28px}
+.work-head h2{margin:0}
+.filters{display:flex; gap:6px; flex-wrap:wrap}
+.filters button{font:inherit; font-size:14px; padding:8px 14px; border-radius:999px; border:1px solid var(--line); background:transparent; color:var(--muted); cursor:pointer; transition:background .2s,color .2s,border-color .2s}
+.filters button span{opacity:.6; margin-left:3px; font-variant-numeric:tabular-nums}
+.filters button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.filters button:hover{color:var(--ink); border-color:color-mix(in srgb,var(--ink) 35%,var(--line))}}
+.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.work-grid .card[hidden]{display:none}
+.work-grid .card.wide{grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.work-grid .card.wide .cover{aspect-ratio:auto; height:100%; min-height:300px}
+.work-grid .card.wide .body{align-self:center; padding:32px 36px}
+.work-grid .card.wide .ct{font-size:clamp(26px,2.6vw,34px)}
+.card .ct{margin:6px 0 8px; font-size:21px; font-weight:500; letter-spacing:-.02em; line-height:1.15}
+.card .body .meta{font-size:13px}
+.also{padding-top:72px!important}
+.also .xp{margin-bottom:28px}
+.wlinks{display:flex; flex-wrap:wrap; gap:8px}
+.wlinks a{display:inline-flex; align-items:baseline; gap:8px; padding:8px 14px; border-radius:999px; border:1px solid var(--line); font-size:14px; color:var(--ink); transition:border-color .2s,background .2s}
+.wlinks a span{color:var(--muted); font-size:12.5px}
+@media (hover:hover) and (pointer:fine){.wlinks a:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:color-mix(in srgb,var(--ink) 4%,transparent)}}
+@media (max-width:860px){.work-grid{grid-template-columns:1fr}.work-grid .card.wide{display:block}.work-grid .card.wide .cover{aspect-ratio:23/10; height:auto; min-height:0}.work-grid .card.wide .body{padding:22px 24px}}
+/* ---- process: always readable ---- */
+.pipe li{opacity:1!important}
+.pipe li .node{transform:none}
+/* ---- currently ---- */
+.now-line{display:flex; align-items:center; gap:10px; margin:-18px 0 32px; font-size:14.5px; color:rgba(255,255,255,.78); opacity:0; animation:fade 1s ease .75s forwards}
+.now-dot{width:8px; height:8px; border-radius:50%; background:#34D399; box-shadow:0 0 0 0 rgba(52,211,153,.55); animation:pulse 2s infinite; flex:none}
+
+/* polish (reels) */
+html{-webkit-tap-highlight-color:transparent}
+a{text-underline-offset:.2em}
+dialog,dialog *,.tlist,.items{overscroll-behavior:contain}
+a,button,.btn,.card,[role="button"]{touch-action:manipulation}
+h1,h2,h3,h4{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
 </style>
 </head>
 <body>
@@ -324,7 +365,8 @@ body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
       <span class="line"><span>add&#8209;ons and worlds,</span></span>
       <span class="line"><span class="grad">brief to release.</span></span>
     </h1>
-    <p class="sub">I'm Setonix. I run Minecraft Marketplace projects end to end: the scope, the team, QA and Microsoft's review. 18 add-ons and 12 worlds shipped with teams of 10 to 30. Based in Colombo, Sri Lanka.</p>
+    <p class="sub">I’m Setonix. I run Minecraft Marketplace projects end to end: the scope, the team, QA and Microsoft’s review. Based in Colombo, Sri Lanka.</p>
+      <p class="now-line"><span class="now-dot" aria-hidden="true"></span>Currently producing the Dragon’s Keep and Modern Home updates at Aurrora</p>
     <div class="ctas">
       <a class="btn primary mag" href="#work">View work <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn ghost mag" href="#contact">Get in touch</a>
@@ -333,7 +375,7 @@ body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
   <a class="scroll" href="#work" aria-label="Scroll to work"></a>
 </div>
 
-<div class="marquee"><p class="marquee-head">Studios I've worked with</p><div class="track" id="track"></div></div>
+<div class="marquee"><p class="marquee-head">Studios I’ve worked with</p><div class="track" id="track"></div></div>
 
 <main class="wrap">
   <section style="padding-top:96px">
@@ -347,65 +389,55 @@ body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
 
   <section id="work">
     <p class="label rv">Selected work</p>
-    <h2 class="rv split">Minecraft projects I produced.</h2>
-    <div class="grid">
-      <a class="card rv" href="work/vehicles/" data-case="vehicles">
-        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-vehicles-1200.webp?v=3" srcset="assets/ka-vehicles-1200.webp?v=3 1200w, assets/ka-vehicles-2400.webp?v=3 2400w" sizes="(max-width:760px) calc(100vw - 32px), 540px" alt="Vehicles key art"></div>
-        <div class="body"><span class="meta">Vehicles, Content pack, 2025</span><p>20+ customisable vehicles and a full road-sign system. I documented all ~279 pieces of content and designed the crafting system. Our lead dev split the assets into a base and high-res pack to beat a texture-memory limit.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    <div class="work-head"><h2 class="rv split">Projects I produced and designed.</h2>
+      <div class="filters rv" role="group" aria-label="Filter projects">
+        <button type="button" data-f="all" aria-pressed="true">All <span>7</span></button>
+        <button type="button" data-f="aurrora" aria-pressed="false">Aurrora <span>4</span></button>
+        <button type="button" data-f="arcanium" aria-pressed="false">Arcanium <span>3</span></button>
+      </div></div>
+    <div class="grid work-grid" id="workGrid">
+      <a class="card rv" href="work/dreamcraft/" data-case="dreamcraft" data-grp="arcanium">
+        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-dreamcraft-1200.webp" srcset="assets/ka-dreamcraft-1200.webp 1200w, assets/ka-dreamcraft-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw, 560px" alt="DreamCraft key art"></div>
+        <div class="body"><span class="meta">Add-on · Arcanium Creations</span><h3 class="ct">DreamCraft</h3><p>Five magic biomes, each with its own blocks, creatures, tools and school of magic. I designed the world and the systems that connect it.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
-      <a class="card rv" href="work/ultimate-tnt/" data-case="ultimate-tnt">
-        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-ultimate-tnt-1200.webp" srcset="assets/ka-ultimate-tnt-1200.webp 1200w, assets/ka-ultimate-tnt-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), 540px" alt="Ultimate TNT key art"></div>
-        <div class="body"><span class="meta">Ultimate TNT, Content pack, with Novasoft</span><p>Took the pack through Marketplace review, handled the reviewer feedback and directed redesigns of four TNT variants until it was approved.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <a class="card rv" href="work/ultimate-tnt/" data-case="ultimate-tnt" data-grp="aurrora">
+        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-ultimate-tnt-1200.webp" srcset="assets/ka-ultimate-tnt-1200.webp 1200w, assets/ka-ultimate-tnt-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw, 560px" alt="Ultimate TNT key art"></div>
+        <div class="body"><span class="meta">Add-on · Novasoft</span><h3 class="ct">Ultimate TNT</h3><p>Took the pack through Marketplace review, handled the reviewer feedback and directed redesigns of four TNT until it was approved.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
-      <a class="card rv" href="work/modern-home/" data-case="modern-home">
-        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-modern-home-1200.webp" srcset="assets/ka-modern-home-1200.webp 1200w, assets/ka-modern-home-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), 540px" alt="Modern Home key art"></div>
-        <div class="body"><span class="meta">Modern Home, Roleplay world, 2020</span><p>A neighbourhood of thirteen modern homes built for social roleplay. The studio's most-reviewed release, with 9,900+ reviews.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <a class="card rv" href="work/dragons-keep/" data-case="dragons-keep" data-grp="aurrora">
+        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-dragons-keep-1200.webp" srcset="assets/ka-dragons-keep-1200.webp 1200w, assets/ka-dragons-keep-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw, 560px" alt="Dragons Keep key art"></div>
+        <div class="body"><span class="meta">Content update · Aurrora</span><h3 class="ct">Dragon’s Keep</h3><p>I’m producing the update to this dragon-taming world: two new Chinese Dragons, two new large dragons, shrines and a feeding item.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
-      <a class="card rv" href="work/dragons-keep/" data-case="dragons-keep">
-        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-dragons-keep-1200.webp" srcset="assets/ka-dragons-keep-1200.webp 1200w, assets/ka-dragons-keep-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), 540px" alt="Dragons Keep key art"></div>
-        <div class="body"><span class="meta">Dragons Keep, Roleplay world, 2020</span><p>Two species of dragon to tame, upgrade, ride and fight, playable as a survival expansion or medieval roleplay. I'm producing its current content update.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <a class="card rv" href="work/modern-home/" data-case="modern-home" data-grp="aurrora">
+        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-modern-home-1200.webp" srcset="assets/ka-modern-home-1200.webp 1200w, assets/ka-modern-home-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw, 560px" alt="Modern Home key art"></div>
+        <div class="body"><span class="meta">Content update · Aurrora</span><h3 class="ct">Modern Home</h3><p>I’m producing the update to Aurrora’s most-reviewed world: 44 new decor pieces and a script module that fixes appliances breaking on reload.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
-    </div>
-    <h3 class="sub rv" style="margin-top:56px">Game design at Arcanium Creations</h3>
-    <div class="grid three">
-      <a class="card rv" href="work/angels-and-demons/" data-case="angels-and-demons">
-        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-angels-and-demons-1200.webp?v=3" srcset="assets/ka-angels-and-demons-1200.webp?v=3 1200w, assets/ka-angels-and-demons-2400.webp?v=3 2400w" sizes="(max-width:760px) calc(100vw - 32px), 360px" alt="Angels &amp; Demons key art"></div>
-        <div class="body"><span class="meta">Angels &amp; Demons, Adventure map, Arcanium Creations</span><p>A story-driven map for 1 to 12 players, with two factions, eight weapons and a three-phase final boss. I wrote the design and worked with the art team to build it.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <a class="card rv" href="work/vehicles/" data-case="vehicles" data-grp="aurrora">
+        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-vehicles-1200.webp?v=3" srcset="assets/ka-vehicles-1200.webp?v=3 1200w, assets/ka-vehicles-2400.webp?v=3 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw, 560px" alt="Vehicles key art"></div>
+        <div class="body"><span class="meta">Add-on · Aurrora · 2025</span><h3 class="ct">Vehicles</h3><p>23 drivable vehicles and a full road-sign system. I wrote the docs and acceptance criteria, designed the crafting and took it through review.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
-      <a class="card rv" href="work/dreamcraft/" data-case="dreamcraft">
-        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-dreamcraft-1200.webp" srcset="assets/ka-dreamcraft-1200.webp 1200w, assets/ka-dreamcraft-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), 360px" alt="DreamCraft key art"></div>
-        <div class="body"><span class="meta">DreamCraft, Add-on, Arcanium Creations</span><p>Five magic biomes, each with its own blocks, creatures, ore, tools and school of magic. I designed the world and the systems that connect it.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <a class="card rv" href="work/angels-and-demons/" data-case="angels-and-demons" data-grp="arcanium">
+        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-angels-and-demons-1200.webp?v=3" srcset="assets/ka-angels-and-demons-1200.webp?v=3 1200w, assets/ka-angels-and-demons-2400.webp?v=3 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw, 560px" alt="Angels &amp; Demons key art"></div>
+        <div class="body"><span class="meta">Adventure map · Arcanium Creations</span><h3 class="ct">Angels &amp; Demons</h3><p>A story-driven map for 1 to 12 players, with two factions, eight weapons and a three-phase final boss. I wrote the design.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
-      <a class="card rv" href="work/crystal-cataclysm/" data-case="crystal-cataclysm">
-        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-crystal-cataclysm-1200.webp" srcset="assets/ka-crystal-cataclysm-1200.webp 1200w, assets/ka-crystal-cataclysm-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), 360px" alt="The Crystal Cataclysm key art"></div>
-        <div class="body"><span class="meta">The Crystal Cataclysm, Adventure map, Arcanium Creations</span><p>Four corrupted cave biomes, five bosses and a finale that remixes all of them. Design doc, specs and animation review.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <a class="card rv" href="work/crystal-cataclysm/" data-case="crystal-cataclysm" data-grp="arcanium">
+        <div class="cover"><img loading="lazy" decoding="async" src="assets/ka-crystal-cataclysm-1200.webp" srcset="assets/ka-crystal-cataclysm-1200.webp 1200w, assets/ka-crystal-cataclysm-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw, 560px" alt="The Crystal Cataclysm key art"></div>
+        <div class="body"><span class="meta">Adventure map · Arcanium Creations</span><h3 class="ct">The Crystal Cataclysm</h3><p>Four corrupted cave biomes, five bosses and a finale that remixes all of them. Design doc, specs and animation review.</p><span class="more">Read case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
     </div>
   </section>
 
-  <section>
+  <section class="also">
     <div class="rv">
-        <h3 class="sub">More add-ons I produced</h3>
-        <div class="xp" style="margin-bottom:56px">
+      <h3 class="sub">Also shipped at Aurrora</h3>
+      <div class="xp">
           <a href="https://chunk.gg/@aurrora/light-plus" target="_blank" rel="noopener"><figure><div class="img"><img src="assets/9e391cbd36.webp" alt="Light Plus key art" loading="lazy"></div><figcaption>Light Plus<span>Lighting, 2026</span></figcaption></figure></a>
           <a href="https://chunk.gg/@aurrora/player-trails" target="_blank" rel="noopener"><figure><div class="img"><img src="assets/15087e34fd.webp" alt="Player Trails key art" loading="lazy"></div><figcaption>Player Trails<span>Cosmetics, 2025</span></figcaption></figure></a>
           <a href="https://chunk.gg/@aurrora/health-bars-plus" target="_blank" rel="noopener"><figure><div class="img"><img src="assets/424c6cff07.webp" alt="Health Bars+ key art" loading="lazy"></div><figcaption>Health Bars+<span>Interface</span></figcaption></figure></a>
           <a href="https://chunk.gg/@aurrora/hunter-vision" target="_blank" rel="noopener"><figure><div class="img"><img src="assets/04c56818f0.webp" alt="Hunter Vision key art" loading="lazy"></div><figcaption>Hunter Vision<span>Utility</span></figcaption></figure></a>
         </div>
-        <h3 class="sub">Aurrora worlds</h3>
-        <ul class="list two">
-          <li><a href="https://bedrockexplorer.com/@aurrora/modern-millionaire" target="_blank" rel="noopener"><span>Modern Millionaire</span><span>Roleplay world</span></a></li>
-          <li><a href="https://bedrockexplorer.com/@aurrora/school-roleplay" target="_blank" rel="noopener"><span>School</span><span>Roleplay world</span></a></li>
-          <li><a href="https://bedrockexplorer.com/@aurrora/skyblock-11" target="_blank" rel="noopener"><span>Skyblock 1.1</span><span>Progression world</span></a></li>
-          <li><a href="https://bedrockexplorer.com/@aurrora/fairbanks-fire-station" target="_blank" rel="noopener"><span>Fairbanks Fire Station</span><span>Adventure world</span></a></li>
-          <li><a href="https://bedrockexplorer.com/@aurrora/middle-school-roleplay" target="_blank" rel="noopener"><span>Middle School</span><span>Roleplay world</span></a></li>
-          <li><a href="https://bedrockexplorer.com/@aurrora/dollar1000000-mansions" target="_blank" rel="noopener"><span>$1,000,000 Mansions</span><span>Roleplay world</span></a></li>
-          <li><a href="https://bedrockexplorer.com/@aurrora/hallmark-hospital-roleplay-11" target="_blank" rel="noopener"><span>Hallmark Hospital</span><span>Roleplay world</span></a></li>
-          <li><a href="https://bedrockexplorer.com/@aurrora/farming-sim" target="_blank" rel="noopener"><span>Farming Sim</span><span>Simulation</span></a></li>
-          <li><a href="https://chunk.gg/@aurrora/one-block-tycoon" target="_blank" rel="noopener"><span>One Block Tycoon</span><span>Progression world, 2023</span></a></li>
-          <li><a href="https://bedrockexplorer.com/@aurrora/bound-night-drift" target="_blank" rel="noopener"><span>Bound: Night Drift</span><span>Arcade</span></a></li>
-        </ul>
-      </div>
+      <div class="wlinks"><a href="https://bedrockexplorer.com/@aurrora/modern-millionaire" target="_blank" rel="noopener">Modern Millionaire<span>Roleplay world</span></a><a href="https://bedrockexplorer.com/@aurrora/school-roleplay" target="_blank" rel="noopener">School<span>Roleplay world</span></a><a href="https://bedrockexplorer.com/@aurrora/skyblock-11" target="_blank" rel="noopener">Skyblock 1.1<span>Progression world</span></a><a href="https://bedrockexplorer.com/@aurrora/fairbanks-fire-station" target="_blank" rel="noopener">Fairbanks Fire Station<span>Adventure world</span></a><a href="https://bedrockexplorer.com/@aurrora/middle-school-roleplay" target="_blank" rel="noopener">Middle School<span>Roleplay world</span></a><a href="https://bedrockexplorer.com/@aurrora/dollar1000000-mansions" target="_blank" rel="noopener">$1,000,000 Mansions<span>Roleplay world</span></a><a href="https://bedrockexplorer.com/@aurrora/hallmark-hospital-roleplay-11" target="_blank" rel="noopener">Hallmark Hospital<span>Roleplay world</span></a><a href="https://bedrockexplorer.com/@aurrora/farming-sim" target="_blank" rel="noopener">Farming Sim<span>Simulation</span></a><a href="https://chunk.gg/@aurrora/one-block-tycoon" target="_blank" rel="noopener">One Block Tycoon<span>Progression world</span></a><a href="https://bedrockexplorer.com/@aurrora/bound-night-drift" target="_blank" rel="noopener">Bound: Night Drift<span>Arcade</span></a></div>
+    </div>
   </section>
 
   <section id="pipeline">
@@ -419,7 +451,7 @@ body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
         <li><span class="node">03</span><h3>Brief</h3><p>Full asset list split into model, texture, animation, audio and dev tasks, each with an owner.</p></li>
         <li><span class="node">04</span><h3>Build</h3><p>One ClickUp task per asset. I check blockers daily and cut scope with MoSCoW if we slip.</p></li>
         <li><span class="node">05</span><h3>QA</h3><p>Numbered review rounds, multiplayer, save and reload, and world-update testing.</p></li>
-        <li><span class="node">06</span><h3>Submit</h3><p>Content guide for Microsoft's reviewers, fixes to approval, then post-launch updates.</p></li>
+        <li><span class="node">06</span><h3>Submit</h3><p>Content guide for Microsoft’s reviewers, fixes to approval, then post-launch updates.</p></li>
       </ol>
     </div>
   </section>
@@ -427,7 +459,7 @@ body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
   <section id="qa">
     <p class="label rv">Quality assurance</p>
     <h2 class="rv split">QA that gets packs through review.</h2>
-    <p class="intro-qa rv">I run QA on every pack I produce, and I've worked as a freelance QA tester at XP Games. I test multiplayer as host and client, save and reload, and fresh versus existing worlds after updates. Every bug report has repro steps, expected vs actual, a severity tag and video or screenshots.</p>
+    <p class="intro-qa rv">I run QA on every pack I produce, and I’ve worked as a freelance QA tester at XP Games. I test multiplayer as host and client, save and reload, and fresh versus existing worlds after updates. Every bug report has repro steps, expected vs actual, a severity tag and video or screenshots.</p>
     <div class="xp">
       <figure class="rv"><div class="img"><img src="assets/983250af15.webp" alt="Backrooms Add-On key art" loading="lazy"></div><figcaption>Backrooms<span>Horror pack</span></figcaption></figure>
       <figure class="rv"><div class="img"><img src="assets/3e3ed9d497.webp" alt="Cave Dweller Add-On key art" loading="lazy"></div><figcaption>Cave Dweller (Official)<span>Horror pack</span></figcaption></figure>
@@ -439,11 +471,11 @@ body.leaving > *:not(.pt):not(.progress){transition:opacity .5s ease; opacity:0}
 
   <section id="about">
     <p class="label rv">About</p>
-    <h2 class="rv split">Who you'd be working with.</h2>
+    <h2 class="rv split">Who you’d be working with.</h2>
     <div class="about">
       <div class="rv">
-        <p class="lead">I'm Manith Liyanage, known in the Marketplace as Setonix. I make sure Minecraft projects ship, on time and the way the team pictured them.</p>
-        <p>As Executive Producer at Aurrora I own the full pipeline: writing the docs, briefing artists, modellers, animators and devs, running QA, and getting packs through Microsoft's review.</p>
+        <p class="lead">I’m Manith Liyanage, known in the Marketplace as Setonix. I make sure Minecraft projects ship, on time and the way the team pictured them.</p>
+        <p>As Executive Producer at Aurrora I run the production pipeline: writing the docs, briefing artists, modellers, animators and devs, running QA, and getting packs through Microsoft’s review.</p>
         <p>Before that I worked as a game designer, concept writer, datapack developer and QA tester, including YouTube maps for SSundee, Zud and Sigils at Tome Productions. So I know how long things really take and how many people they need, and I give the team room to be creative while keeping the work moving.</p>
         <div class="tools"><span>Notion</span><span>ClickUp</span><span>Jira</span><span>GitHub</span><span>Discord</span><span>Blockbench</span><span>Bedrock add-ons</span><span>Java datapacks</span></div>
       </div>
@@ -697,6 +729,36 @@ tk(); setInterval(tk,30000);
   },{passive:true});
 })();
 </script>
+<script>
+(function(){
+  const g=document.getElementById("workGrid"); if(!g) return;
+  const cards=[...g.querySelectorAll(".card")], btns=[...document.querySelectorAll(".filters button")];
+  function apply(f){
+    btns.forEach(b=>b.setAttribute("aria-pressed",b.dataset.f===f));
+    const vis=cards.filter(c=>f==="all"||c.dataset.grp===f);
+    cards.forEach(c=>{c.hidden=!vis.includes(c); c.classList.remove("wide")});
+    if(vis.length%2) vis[0].classList.add("wide");
+    vis.forEach((c,i)=>{c.classList.add("in"); c.animate([{opacity:0,transform:"translateY(14px)"},{opacity:1,transform:"none"}],{duration:450,delay:i*40,easing:"cubic-bezier(.16,1,.3,1)",fill:"backwards"})});
+  }
+  btns.forEach(b=>b.addEventListener("click",()=>apply(b.dataset.f)));
+  apply("all");
+})();
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4834fab508314c3cac714a8b5e0414fa"}'></script>
+<script>
+/* press feedback: a small squish on tap/click, composes with existing transforms */
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const SEL=".btn,.mag,.card,.back,.chip,.tabs button,.tntg button,.room,.sw button,.floatnav a,.next,.xp a,button";
+  const down=e=>{const el=e.target.closest(SEL); if(!el||el.disabled) return;
+    el.getAnimations().filter(a=>a.id==="press").forEach(a=>a.cancel());
+    const a=el.animate([{scale:"1"},{scale:".97"}],{duration:150,easing:"ease-out",fill:"forwards"}); a.id="press";
+    const up=()=>{a.cancel(); el.animate([{scale:".97"},{scale:"1"}],{duration:220,easing:"cubic-bezier(.2,.9,.3,1.3)"});
+      ["pointerup","pointerleave","pointercancel"].forEach(t=>el.removeEventListener(t,up))};
+    ["pointerup","pointerleave","pointercancel"].forEach(t=>el.addEventListener(t,up,{once:true}));
+  };
+  addEventListener("pointerdown",down,{passive:true});
+})();
+</script>
 </body>
 </html>

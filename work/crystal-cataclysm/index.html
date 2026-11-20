@@ -48,8 +48,8 @@ button{font:inherit; color:inherit}
 .top.solid{background:color-mix(in srgb,var(--bg) 78%,transparent); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-color:var(--line)}
 .top .wrap{display:flex; justify-content:space-between; align-items:center; gap:12px}
 .back{display:inline-flex; align-items:center; gap:8px; padding:8px 14px 8px 11px; border-radius:999px; border:1px solid var(--line); background:var(--card2); font-size:14px; font-weight:500; transition:transform .25s var(--e), border-color .25s}
-.back:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
-.back svg{transition:transform .25s var(--e)} .back:hover svg{transform:translateX(-3px)}
+@media (hover:hover) and (pointer:fine){.back:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}}
+.back svg{transition:transform .25s var(--e)} @media (hover:hover) and (pointer:fine){.back:hover svg{transform:translateX(-3px)}}
 .me{display:flex; align-items:center; gap:10px; font-weight:600; font-size:16px}
 .me i{width:10px; height:10px; border-radius:50%; background:conic-gradient(#3B4EF0,#8B5CF6,#22D3EE,#3B4EF0); animation:spin 4s linear infinite}
 @keyframes spin{to{transform:rotate(1turn)}}
@@ -148,10 +148,10 @@ ol.dec{padding:0; margin:0}
 .next small{font-family:var(--mono); font-size:12.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em}
 .next strong{display:block; font-size:clamp(36px,6vw,80px); font-weight:500; letter-spacing:-.05em; line-height:1; margin-top:10px}
 .next strong svg{display:inline-block; vertical-align:middle; transition:transform .4s var(--e)}
-.next:hover strong svg{transform:translateX(10px)}
+@media (hover:hover) and (pointer:fine){.next:hover strong svg{transform:translateX(10px)}}
 .next .cover{aspect-ratio:23/10; border-radius:20px; overflow:hidden; position:relative; background:var(--card)}
 .next .cover img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.2s var(--e)}
-.next:hover .cover img{transform:scale(1.06)}
+@media (hover:hover) and (pointer:fine){.next:hover .cover img{transform:scale(1.06)}}
 footer{border-top:1px solid var(--line); padding:26px 0 40px; font-size:13.5px; color:var(--muted)}
 footer .wrap{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
 footer a{color:var(--ink)}
@@ -165,11 +165,11 @@ footer a{color:var(--ink)}
 /* ---------- vehicles ---------- */
 .roster{display:grid; grid-template-columns:repeat(auto-fill,minmax(132px,1fr)); gap:10px}
 .veh{background:var(--card2); border:1px solid var(--line); border-radius:16px; padding:14px 12px 12px; display:flex; flex-direction:column; gap:8px; transition:opacity .35s, transform .45s var(--e), border-color .25s}
-.veh:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+@media (hover:hover) and (pointer:fine){.veh:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}}
 .veh svg{width:100%; height:46px; color:var(--ink); overflow:visible}
 .veh svg .wh{fill:var(--card2)}
-.veh:hover svg{animation:drive .9s var(--e)}
-.veh:hover svg .fx{animation:spinfx .5s linear infinite}
+@media (hover:hover) and (pointer:fine){.veh:hover svg{animation:drive .9s var(--e)}}
+@media (hover:hover) and (pointer:fine){.veh:hover svg .fx{animation:spinfx .5s linear infinite}}
 @keyframes drive{0%{transform:none}30%{transform:translateX(-6px) rotate(-2deg)}60%{transform:translateX(8px)}100%{transform:none}}
 .veh span{font-size:13.5px; font-weight:500; line-height:1.25}
 .veh small{font-size:11.5px; color:var(--muted); font-family:var(--mono)}
@@ -184,7 +184,7 @@ footer a{color:var(--ink)}
 .hotbar.drive .slot .lbl{opacity:1}
 .hb-ctl{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:34px}
 .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font-weight:500; font-size:14.5px; border:1px solid var(--line); background:var(--card2); cursor:pointer; transition:transform .2s, background .2s, border-color .2s}
-.btn:hover{transform:translateY(-2px); border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+@media (hover:hover) and (pointer:fine){.btn:hover{transform:translateY(-2px); border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}}
 .btn.pri{background:var(--ink); color:var(--bg); border-color:var(--ink)}
 .status{font-family:var(--mono); font-size:12.5px; color:var(--muted)}
 .mem{display:grid; gap:18px}
@@ -202,7 +202,7 @@ footer a{color:var(--ink)}
 /* ---------- tnt ---------- */
 .tntg{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:18px}
 .tntg button{all:unset; cursor:pointer; border-radius:16px; border:1px solid var(--line); background:var(--card2); padding:16px; display:flex; flex-direction:column; gap:10px; transition:border-color .2s, transform .3s var(--e)}
-.tntg button:hover{transform:translateY(-3px)}
+@media (hover:hover) and (pointer:fine){.tntg button:hover{transform:translateY(-3px)}}
 .tntg button[aria-pressed="true"]{border-color:var(--c); box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent)}
 .tntg b{font-size:28px; font-weight:500; letter-spacing:-.04em; line-height:1}
 .tntg span{font-size:13.5px; color:var(--muted)}
@@ -283,7 +283,7 @@ footer a{color:var(--ink)}
 /* ---------- modern home ---------- */
 .rooms{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(150px,40%),1fr)); gap:10px}
 .room{all:unset; cursor:pointer; box-sizing:border-box; border:1px solid var(--line); border-radius:16px; padding:16px; background:var(--card2); display:flex; flex-direction:column; gap:10px; transition:border-color .2s, transform .3s var(--e)}
-.room:hover{transform:translateY(-3px)}
+@media (hover:hover) and (pointer:fine){.room:hover{transform:translateY(-3px)}}
 .room[aria-pressed="true"]{border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
 .room svg{width:30px; height:30px; color:var(--accent)}
 .room b{font-size:26px; font-weight:500; letter-spacing:-.04em; line-height:1}
@@ -357,7 +357,7 @@ footer a{color:var(--ink)}
 .gal{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px}
 .gal.lg{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
 .tile{margin:0; border-radius:16px; overflow:hidden; background:#121217; border:1px solid var(--line); position:relative; transition:transform .45s var(--e), border-color .25s}
-.tile:hover{transform:translateY(-4px); border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+@media (hover:hover) and (pointer:fine){.tile:hover{transform:translateY(-4px); border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}}
 .tile img,.tile video{display:block; width:100%; aspect-ratio:1; object-fit:contain; background:#121217}
 .tile.wide img,.tile.wide video{aspect-ratio:16/10; object-fit:cover}
 .tile figcaption{padding:10px 12px 12px; font-size:13px; color:#E4E4E7; background:#17171D; line-height:1.35}
@@ -373,7 +373,7 @@ footer a{color:var(--ink)}
 .path{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; position:relative}
 .path button{all:unset; box-sizing:border-box; cursor:pointer; border:1px solid var(--line); border-radius:14px; padding:12px; background:var(--card2); font-size:13.5px; line-height:1.3; transition:border-color .2s, transform .3s var(--e)}
 .path button small{display:block; font-family:var(--mono); font-size:11px; color:var(--muted); margin-bottom:4px}
-.path button:hover{transform:translateY(-3px)}
+@media (hover:hover) and (pointer:fine){.path button:hover{transform:translateY(-3px)}}
 .path button[aria-pressed="true"]{border-color:var(--c,var(--accent)); box-shadow:0 0 0 3px color-mix(in srgb,var(--c,var(--accent)) 22%,transparent)}
 .pdet{margin-top:14px; min-height:110px}
 .pdet h4{font-size:20px; letter-spacing:-.02em}
@@ -419,13 +419,28 @@ footer a{color:var(--ink)}
 .phase button[aria-pressed="true"] small{color:inherit; opacity:.65}
 .tile video{background:#121217}
 
-/* custom cursor: gradient arrow */
+/* proof strip */
+.proof{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:10px 0 18px}
+.proof div{padding:16px 18px; border-radius:16px; background:var(--card); border:1px solid var(--line)}
+.proof b{display:block; font-size:clamp(22px,2.4vw,30px); font-weight:500; letter-spacing:-.035em; line-height:1.05; font-variant-numeric:tabular-nums}
+.proof span{display:block; margin-top:6px; font-size:13px; color:var(--muted); line-height:1.35}
+@media (max-width:760px){.proof{grid-template-columns:1fr 1fr}}
+
+@media (hover:hover) and (pointer:fine){/* custom cursor: gradient arrow */
 @media (hover:hover) and (pointer:fine){
   html, body{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238B97FF%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23C084FC%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 5 3, auto}
   a, button, [role=button], .seg button, summary, label{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2367E8F9%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238B97FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%223.4%22%20fill%3D%22%23fff%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.5%22%20stroke-width%3D%221%22/%3E%3C/svg%3E") 5 3, pointer}
   input, textarea, [contenteditable]{cursor:text}
-}
+}}
 
+
+/* polish (reels) */
+html{-webkit-tap-highlight-color:transparent}
+a{text-underline-offset:.2em}
+dialog,dialog *,.tlist,.items{overscroll-behavior:contain}
+a,button,.btn,.card,[role="button"]{touch-action:manipulation}
+h1,h2,h3,h4{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
 </style>
 </head>
 <body>
@@ -447,9 +462,9 @@ footer a{color:var(--ink)}
 <ul class="ticks rv"><li><strong>Design doc.</strong> Wrote the biome concepts, hazards, mobs, bosses, resources, crafting progression and structures.</li>
 <li><strong>Specs.</strong> Wrote animation and VFX notes for every entity, including the four phases of the final boss.</li>
 <li><strong>Review.</strong> Checked each model and animation pass against the doc, with fixes marked up on renders.</li></ul><div class="credits rv"><span class="chip">Models · <strong>Benji</strong></span><span class="chip">Animation · <strong>Nagisa</strong></span><span class="chip">Builds · <strong>dee</strong></span></div></div></section><section class="sec"><div class="side rv"><span class="num">03</span><h2>Biomes</h2></div><div class="main"><h3 class="rv">Each cave has its own hazard.</h3>
-<p class="rv">Every biome has its own way of hurting you and its own resource to reward you. Pick a cave.</p><div class="rv" data-sel="ccbm"><div class="path"><button type="button" data-k="sp" aria-pressed="false"><small>Biome 1</small>Shattered Spires</button><button type="button" data-k="mh" aria-pressed="false"><small>Biome 2</small>Molten Hollows</button><button type="button" data-k="od" aria-pressed="false"><small>Biome 3</small>Obsidian Depths</button><button type="button" data-k="gg" aria-pressed="false"><small>Biome 4</small>Glowspore Grove</button></div><div class="pdet" data-out></div></div><script type="application/json" id="ccbm">{"sp": {"c": "#C4B5FD", "html": "<div class=\"stage\"><div><h4>Shattered Spires</h4><p>Jagged crystal towers, floating shards and steep drops. Platforms crumble under you, and crystal chimes pull in mobs if you knock them.</p><ul class=\"ticks\"><li><strong>Hazard</strong> Falling crystal spikes that grow back</li><li><strong>Mobs</strong> Crystal Slimes, Shatter Wisps</li><li><strong>Boss</strong> The Prism Tyrant, a crystal golem that fires lasers</li><li><strong>Loot</strong> Prism Fragments for the Prism Blade</li></ul></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_382.mp4\"></video></div></div>"}, "mh": {"c": "#FB923C", "html": "<div class=\"stage\"><div><h4>Molten Hollows</h4><p>Crystal veins fused with magma and dripping embers.</p><ul class=\"ticks\"><li><strong>Hazard</strong> Lava surges through the tunnels</li><li><strong>Mobs</strong> Molten Bats, Lava Creepers</li><li><strong>Boss</strong> The Infernal Core, a crystal heart that sends out fire shockwaves</li><li><strong>Loot</strong> Magma Glass and Inferno Cores</li></ul></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_389.mp4\"></video></div></div>"}, "od": {"c": "#A78BFA", "html": "<div class=\"stage\"><div><h4>Obsidian Depths</h4><p>Basalt caves lit only by violet veins. The late-game zone.</p><ul class=\"ticks\"><li><strong>Hazard</strong> Darkness fog drains health if you have no light</li><li><strong>Mobs</strong> Obsidian Crawlers, Crystal Phantoms</li><li><strong>Boss</strong> The Abyssal Maw, a burrowing void worm</li><li><strong>Loot</strong> Abyssal Shards and Void Resin</li></ul></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_412.mp4\"></video></div></div>"}, "gg": {"c": "#86EFAC", "html": "<div class=\"stage\"><div><h4>Glowspore Grove</h4><p>A glowing cave forest overrun by unstable crystal.</p><ul class=\"ticks\"><li><strong>Hazard</strong> Random crystal eruptions spike the ground</li><li><strong>Mobs</strong> Glow Spores, Shard Serpents</li><li><strong>Boss</strong> The Verdant Warden, a crystal-armoured plant beast</li><li><strong>Loot</strong> Warden's Bloom and Crystal Spore</li></ul></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_403.mp4\"></video></div></div>"}}</script></div></section><section class="sec"><div class="side rv"><span class="num">04</span><h2>Final boss</h2></div><div class="main"><h3 class="rv">The Cataclysmic Core uses everything you've fought.</h3>
+<p class="rv">Every biome has its own way of hurting you and its own resource to reward you. Pick a cave.</p><div class="rv" data-sel="ccbm"><div class="path"><button type="button" data-k="sp" aria-pressed="false"><small>Biome 1</small>Shattered Spires</button><button type="button" data-k="mh" aria-pressed="false"><small>Biome 2</small>Molten Hollows</button><button type="button" data-k="od" aria-pressed="false"><small>Biome 3</small>Obsidian Depths</button><button type="button" data-k="gg" aria-pressed="false"><small>Biome 4</small>Glowspore Grove</button></div><div class="pdet" data-out></div></div><script type="application/json" id="ccbm">{"sp": {"c": "#C4B5FD", "html": "<div class=\"stage\"><div><h4>Shattered Spires</h4><p>Jagged crystal towers, floating shards and steep drops. Platforms crumble under you, and crystal chimes pull in mobs if you knock them.</p><ul class=\"ticks\"><li><strong>Hazard</strong> Falling crystal spikes that grow back</li><li><strong>Mobs</strong> Crystal Slimes, Shatter Wisps</li><li><strong>Boss</strong> The Prism Tyrant, a crystal golem that fires lasers</li><li><strong>Loot</strong> Prism Fragments for the Prism Blade</li></ul></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_382.mp4\"></video></div></div>"}, "mh": {"c": "#FB923C", "html": "<div class=\"stage\"><div><h4>Molten Hollows</h4><p>Crystal veins fused with magma and dripping embers.</p><ul class=\"ticks\"><li><strong>Hazard</strong> Lava surges through the tunnels</li><li><strong>Mobs</strong> Molten Bats, Lava Creepers</li><li><strong>Boss</strong> The Infernal Core, a crystal heart that sends out fire shockwaves</li><li><strong>Loot</strong> Magma Glass and Inferno Cores</li></ul></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_389.mp4\"></video></div></div>"}, "od": {"c": "#A78BFA", "html": "<div class=\"stage\"><div><h4>Obsidian Depths</h4><p>Basalt caves lit only by violet veins. The late-game zone.</p><ul class=\"ticks\"><li><strong>Hazard</strong> Darkness fog drains health if you have no light</li><li><strong>Mobs</strong> Obsidian Crawlers, Crystal Phantoms</li><li><strong>Boss</strong> The Abyssal Maw, a burrowing void worm</li><li><strong>Loot</strong> Abyssal Shards and Void Resin</li></ul></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_412.mp4\"></video></div></div>"}, "gg": {"c": "#86EFAC", "html": "<div class=\"stage\"><div><h4>Glowspore Grove</h4><p>A glowing cave forest overrun by unstable crystal.</p><ul class=\"ticks\"><li><strong>Hazard</strong> Random crystal eruptions spike the ground</li><li><strong>Mobs</strong> Glow Spores, Shard Serpents</li><li><strong>Boss</strong> The Verdant Warden, a crystal-armoured plant beast</li><li><strong>Loot</strong> Warden's Bloom and Crystal Spore</li></ul></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_403.mp4\"></video></div></div>"}}</script></div></section><section class="sec"><div class="side rv"><span class="num">04</span><h2>Final boss</h2></div><div class="main"><h3 class="rv">The Cataclysmic Core uses everything you’ve fought.</h3>
 <p class="rv">Once all four relics are claimed, the Crystal Heart Chamber opens. Each phase of the Core takes on a different biome, so the last fight tests what you learned in each one. The model swaps palettes between phases.</p><div class="box rv"><div class="rv" data-sel="cccore"><div class="phase"><button type="button" data-k="p1" aria-pressed="false"><small>Phase 1</small>Heart of Shards</button><button type="button" data-k="p2" aria-pressed="false"><small>Phase 2</small>Infernal Surge</button><button type="button" data-k="p3" aria-pressed="false"><small>Phase 3</small>Verdant Collapse</button><button type="button" data-k="p4" aria-pressed="false"><small>Final</small>All four</button></div><div class="pdet" data-out></div></div><script type="application/json" id="cccore">{"p1": {"c": "#C4B5FD", "html": "<div class=\"stage\"><div><h4>Phase 1 \u00b7 Heart of Shards</h4><p>Crystal shards rain from the ceiling and become both cover and hazard.</p></div><div class=\"media\"><img src=\"../../assets/arc/cc-core-crystal.webp\" alt=\"Core, crystal phase\"></div></div>"}, "p2": {"c": "#FB923C", "html": "<div class=\"stage\"><div><h4>Phase 2 \u00b7 Infernal Surge</h4><p>The core heats to magma and takes attacks from the Molten Hollows.</p></div><div class=\"media\"><img src=\"../../assets/arc/cc-core-magma.webp\" alt=\"Core, magma phase\"></div></div>"}, "p3": {"c": "#86EFAC", "html": "<div class=\"stage\"><div><h4>Phase 3 \u00b7 Verdant Collapse</h4><p>Spores and crystal growth take over the arena.</p></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_430.mp4\"></video></div></div>"}, "p4": {"c": "#F0ABFC", "html": "<div class=\"stage\"><div><h4>Final phase</h4><p>The core turns monstrous and combines attacks from all four biomes. Win it and the relic weapons stay unlocked for good.</p></div><div class=\"media\"><video data-auto muted loop playsinline src=\"../../assets/arc/clip-cc_437.mp4\"></video></div></div>"}}</script></div></div></section><section class="sec"><div class="side rv"><span class="num">05</span><h2>Bestiary</h2></div><div class="main"><h3 class="rv">Models and animation passes.</h3><div class="gal rv"><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-prism-tyrant.webp" alt="The Prism Tyrant"><figcaption>The Prism Tyrant<small>Boss · Shattered Spires</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-abyssal-maw.webp" alt="The Abyssal Maw"><figcaption>The Abyssal Maw<small>Boss · Obsidian Depths</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-verdant-warden.webp" alt="The Verdant Warden"><figcaption>The Verdant Warden<small>Boss · Glowspore Grove</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-crystal-slime.webp" alt="Crystal Slime"><figcaption>Crystal Slime<small>Trap creature</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-molten-bat.webp" alt="Molten Bat"><figcaption>Molten Bat<small>Swarm</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-lava-creeper.webp" alt="Lava Creeper"><figcaption>Lava Creeper<small>Explodes into fire</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-obsidian-crawler.webp" alt="Obsidian Crawler"><figcaption>Obsidian Crawler<small>Clings to ceilings</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-crystal-phantom.webp" alt="Crystal Phantom"><figcaption>Crystal Phantom<small>Phases through walls</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-glow-spore.webp" alt="Glow Spore"><figcaption>Glow Spore<small>Bursts into crystal dust</small></figcaption></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-shard-serpent.webp" alt="Shard Serpent"><figcaption>Shard Serpent<small>Fast striker</small></figcaption></figure></div><p class="sub rv">Animations</p><div class="gal lg rv"><figure class="tile wide"><video data-auto muted loop playsinline preload="metadata" src="../../assets/arc/clip-cc_382.mp4"></video><figcaption>Prism Tyrant<small>Animation pass</small></figcaption></figure><figure class="tile wide"><video data-auto muted loop playsinline preload="metadata" src="../../assets/arc/clip-cc_374.mp4"></video><figcaption>Shard Serpent<small>Animation pass</small></figcaption></figure><figure class="tile wide"><video data-auto muted loop playsinline preload="metadata" src="../../assets/arc/clip-cc_385.mp4"></video><figcaption>Molten Bat<small>Animation pass</small></figcaption></figure><figure class="tile wide"><video data-auto muted loop playsinline preload="metadata" src="../../assets/arc/clip-cc_393.mp4"></video><figcaption>Obsidian Crawler<small>Animation pass</small></figcaption></figure><figure class="tile wide"><video data-auto muted loop playsinline preload="metadata" src="../../assets/arc/clip-cc_387.mp4"></video><figcaption>Crystal Phantom<small>Animation pass</small></figcaption></figure><figure class="tile wide"><video data-auto muted loop playsinline preload="metadata" src="../../assets/arc/clip-cc_398.mp4"></video><figcaption>Crystal Slime<small>Animation pass</small></figcaption></figure><figure class="tile wide"><video data-auto muted loop playsinline preload="metadata" src="../../assets/arc/clip-cc_396.mp4"></video><figcaption>Glow Spore<small>Animation pass</small></figcaption></figure><figure class="tile wide"><video data-auto muted loop playsinline preload="metadata" src="../../assets/arc/clip-cc_424.mp4"></video><figcaption>Cataclysmic Core<small>Animation pass</small></figcaption></figure></div></div></section><section class="sec"><div class="side rv"><span class="num">06</span><h2>Blocks and progression</h2></div><div class="main"><h3 class="rv">Loot that sets up the next cave.</h3>
-<p class="rv">Resources aren't just for score. Prism Fragments become the Prism Blade, which reflects projectiles. Refractor Bloom becomes flash bombs for blinding mobs in the dark. Crystal Chime fragments become sound traps that lure or repel mobs.</p>
+<p class="rv">Resources aren’t just for score. Prism Fragments become the Prism Blade, which reflects projectiles. Refractor Bloom becomes flash bombs for blinding mobs in the dark. Crystal Chime fragments become sound traps that lure or repel mobs.</p>
 <div class="gal rv"><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-00.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-01.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-02.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-03.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-04.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-05.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-06.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-07.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-08.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-09.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-10.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-11.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-12.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/cc-blk-13.webp" alt=""></figure></div></div></section><section class="sec"><div class="side rv"><span class="num">07</span><h2>Thought process</h2></div><div class="main"><ol class="dec rv"><li><span>01</span><div><h4>One loop, four flavours</h4><p>Every biome follows the same explore, fight, boss and relic loop, so players always know their goal while the setting keeps changing.</p></div></li><li><span>02</span><div><h4>Hazards with a counter</h4><p>Darkness drains you but light gear stops it. Floating shards crumble but gliders help. Every hazard has an answer you can craft.</p></div></li><li><span>03</span><div><h4>A finale that remixes</h4><p>The Core reuses all four biomes, so the last fight feels earned instead of random.</p></div></li><li><span>04</span><div><h4>Palette swaps for phases</h4><p>One boss model with phase palettes gives clear phase changes without four separate models.</p></div></li></ol></div></section>
 </div>
 </main>
@@ -706,5 +721,20 @@ if(rl){
 
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4834fab508314c3cac714a8b5e0414fa"}'></script>
+<script>
+/* press feedback: a small squish on tap/click, composes with existing transforms */
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const SEL=".btn,.mag,.card,.back,.chip,.tabs button,.tntg button,.room,.sw button,.floatnav a,.next,.xp a,button";
+  const down=e=>{const el=e.target.closest(SEL); if(!el||el.disabled) return;
+    el.getAnimations().filter(a=>a.id==="press").forEach(a=>a.cancel());
+    const a=el.animate([{scale:"1"},{scale:".97"}],{duration:150,easing:"ease-out",fill:"forwards"}); a.id="press";
+    const up=()=>{a.cancel(); el.animate([{scale:".97"},{scale:"1"}],{duration:220,easing:"cubic-bezier(.2,.9,.3,1.3)"});
+      ["pointerup","pointerleave","pointercancel"].forEach(t=>el.removeEventListener(t,up))};
+    ["pointerup","pointerleave","pointercancel"].forEach(t=>el.addEventListener(t,up,{once:true}));
+  };
+  addEventListener("pointerdown",down,{passive:true});
+})();
+</script>
 </body>
 </html>

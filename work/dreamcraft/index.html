@@ -48,8 +48,8 @@ button{font:inherit; color:inherit}
 .top.solid{background:color-mix(in srgb,var(--bg) 78%,transparent); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-color:var(--line)}
 .top .wrap{display:flex; justify-content:space-between; align-items:center; gap:12px}
 .back{display:inline-flex; align-items:center; gap:8px; padding:8px 14px 8px 11px; border-radius:999px; border:1px solid var(--line); background:var(--card2); font-size:14px; font-weight:500; transition:transform .25s var(--e), border-color .25s}
-.back:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
-.back svg{transition:transform .25s var(--e)} .back:hover svg{transform:translateX(-3px)}
+@media (hover:hover) and (pointer:fine){.back:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}}
+.back svg{transition:transform .25s var(--e)} @media (hover:hover) and (pointer:fine){.back:hover svg{transform:translateX(-3px)}}
 .me{display:flex; align-items:center; gap:10px; font-weight:600; font-size:16px}
 .me i{width:10px; height:10px; border-radius:50%; background:conic-gradient(#3B4EF0,#8B5CF6,#22D3EE,#3B4EF0); animation:spin 4s linear infinite}
 @keyframes spin{to{transform:rotate(1turn)}}
@@ -148,10 +148,10 @@ ol.dec{padding:0; margin:0}
 .next small{font-family:var(--mono); font-size:12.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em}
 .next strong{display:block; font-size:clamp(36px,6vw,80px); font-weight:500; letter-spacing:-.05em; line-height:1; margin-top:10px}
 .next strong svg{display:inline-block; vertical-align:middle; transition:transform .4s var(--e)}
-.next:hover strong svg{transform:translateX(10px)}
+@media (hover:hover) and (pointer:fine){.next:hover strong svg{transform:translateX(10px)}}
 .next .cover{aspect-ratio:23/10; border-radius:20px; overflow:hidden; position:relative; background:var(--card)}
 .next .cover img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.2s var(--e)}
-.next:hover .cover img{transform:scale(1.06)}
+@media (hover:hover) and (pointer:fine){.next:hover .cover img{transform:scale(1.06)}}
 footer{border-top:1px solid var(--line); padding:26px 0 40px; font-size:13.5px; color:var(--muted)}
 footer .wrap{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
 footer a{color:var(--ink)}
@@ -165,11 +165,11 @@ footer a{color:var(--ink)}
 /* ---------- vehicles ---------- */
 .roster{display:grid; grid-template-columns:repeat(auto-fill,minmax(132px,1fr)); gap:10px}
 .veh{background:var(--card2); border:1px solid var(--line); border-radius:16px; padding:14px 12px 12px; display:flex; flex-direction:column; gap:8px; transition:opacity .35s, transform .45s var(--e), border-color .25s}
-.veh:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+@media (hover:hover) and (pointer:fine){.veh:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}}
 .veh svg{width:100%; height:46px; color:var(--ink); overflow:visible}
 .veh svg .wh{fill:var(--card2)}
-.veh:hover svg{animation:drive .9s var(--e)}
-.veh:hover svg .fx{animation:spinfx .5s linear infinite}
+@media (hover:hover) and (pointer:fine){.veh:hover svg{animation:drive .9s var(--e)}}
+@media (hover:hover) and (pointer:fine){.veh:hover svg .fx{animation:spinfx .5s linear infinite}}
 @keyframes drive{0%{transform:none}30%{transform:translateX(-6px) rotate(-2deg)}60%{transform:translateX(8px)}100%{transform:none}}
 .veh span{font-size:13.5px; font-weight:500; line-height:1.25}
 .veh small{font-size:11.5px; color:var(--muted); font-family:var(--mono)}
@@ -184,7 +184,7 @@ footer a{color:var(--ink)}
 .hotbar.drive .slot .lbl{opacity:1}
 .hb-ctl{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:34px}
 .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font-weight:500; font-size:14.5px; border:1px solid var(--line); background:var(--card2); cursor:pointer; transition:transform .2s, background .2s, border-color .2s}
-.btn:hover{transform:translateY(-2px); border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+@media (hover:hover) and (pointer:fine){.btn:hover{transform:translateY(-2px); border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}}
 .btn.pri{background:var(--ink); color:var(--bg); border-color:var(--ink)}
 .status{font-family:var(--mono); font-size:12.5px; color:var(--muted)}
 .mem{display:grid; gap:18px}
@@ -202,7 +202,7 @@ footer a{color:var(--ink)}
 /* ---------- tnt ---------- */
 .tntg{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:18px}
 .tntg button{all:unset; cursor:pointer; border-radius:16px; border:1px solid var(--line); background:var(--card2); padding:16px; display:flex; flex-direction:column; gap:10px; transition:border-color .2s, transform .3s var(--e)}
-.tntg button:hover{transform:translateY(-3px)}
+@media (hover:hover) and (pointer:fine){.tntg button:hover{transform:translateY(-3px)}}
 .tntg button[aria-pressed="true"]{border-color:var(--c); box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 22%,transparent)}
 .tntg b{font-size:28px; font-weight:500; letter-spacing:-.04em; line-height:1}
 .tntg span{font-size:13.5px; color:var(--muted)}
@@ -283,7 +283,7 @@ footer a{color:var(--ink)}
 /* ---------- modern home ---------- */
 .rooms{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(150px,40%),1fr)); gap:10px}
 .room{all:unset; cursor:pointer; box-sizing:border-box; border:1px solid var(--line); border-radius:16px; padding:16px; background:var(--card2); display:flex; flex-direction:column; gap:10px; transition:border-color .2s, transform .3s var(--e)}
-.room:hover{transform:translateY(-3px)}
+@media (hover:hover) and (pointer:fine){.room:hover{transform:translateY(-3px)}}
 .room[aria-pressed="true"]{border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
 .room svg{width:30px; height:30px; color:var(--accent)}
 .room b{font-size:26px; font-weight:500; letter-spacing:-.04em; line-height:1}
@@ -357,7 +357,7 @@ footer a{color:var(--ink)}
 .gal{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px}
 .gal.lg{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
 .tile{margin:0; border-radius:16px; overflow:hidden; background:#121217; border:1px solid var(--line); position:relative; transition:transform .45s var(--e), border-color .25s}
-.tile:hover{transform:translateY(-4px); border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+@media (hover:hover) and (pointer:fine){.tile:hover{transform:translateY(-4px); border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}}
 .tile img,.tile video{display:block; width:100%; aspect-ratio:1; object-fit:contain; background:#121217}
 .tile.wide img,.tile.wide video{aspect-ratio:16/10; object-fit:cover}
 .tile figcaption{padding:10px 12px 12px; font-size:13px; color:#E4E4E7; background:#17171D; line-height:1.35}
@@ -373,7 +373,7 @@ footer a{color:var(--ink)}
 .path{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; position:relative}
 .path button{all:unset; box-sizing:border-box; cursor:pointer; border:1px solid var(--line); border-radius:14px; padding:12px; background:var(--card2); font-size:13.5px; line-height:1.3; transition:border-color .2s, transform .3s var(--e)}
 .path button small{display:block; font-family:var(--mono); font-size:11px; color:var(--muted); margin-bottom:4px}
-.path button:hover{transform:translateY(-3px)}
+@media (hover:hover) and (pointer:fine){.path button:hover{transform:translateY(-3px)}}
 .path button[aria-pressed="true"]{border-color:var(--c,var(--accent)); box-shadow:0 0 0 3px color-mix(in srgb,var(--c,var(--accent)) 22%,transparent)}
 .pdet{margin-top:14px; min-height:110px}
 .pdet h4{font-size:20px; letter-spacing:-.02em}
@@ -419,13 +419,28 @@ footer a{color:var(--ink)}
 .phase button[aria-pressed="true"] small{color:inherit; opacity:.65}
 .tile video{background:#121217}
 
-/* custom cursor: gradient arrow */
+/* proof strip */
+.proof{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:10px 0 18px}
+.proof div{padding:16px 18px; border-radius:16px; background:var(--card); border:1px solid var(--line)}
+.proof b{display:block; font-size:clamp(22px,2.4vw,30px); font-weight:500; letter-spacing:-.035em; line-height:1.05; font-variant-numeric:tabular-nums}
+.proof span{display:block; margin-top:6px; font-size:13px; color:var(--muted); line-height:1.35}
+@media (max-width:760px){.proof{grid-template-columns:1fr 1fr}}
+
+@media (hover:hover) and (pointer:fine){/* custom cursor: gradient arrow */
 @media (hover:hover) and (pointer:fine){
   html, body{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238B97FF%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23C084FC%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 5 3, auto}
   a, button, [role=button], .seg button, summary, label{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2367E8F9%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238B97FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%223.4%22%20fill%3D%22%23fff%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.5%22%20stroke-width%3D%221%22/%3E%3C/svg%3E") 5 3, pointer}
   input, textarea, [contenteditable]{cursor:text}
-}
+}}
 
+
+/* polish (reels) */
+html{-webkit-tap-highlight-color:transparent}
+a{text-underline-offset:.2em}
+dialog,dialog *,.tlist,.items{overscroll-behavior:contain}
+a,button,.btn,.card,[role="button"]{touch-action:manipulation}
+h1,h2,h3,h4{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
 </style>
 </head>
 <body>
@@ -447,7 +462,7 @@ footer a{color:var(--ink)}
 <ul class="ticks rv"><li><strong>World design.</strong> Wrote the five biome concepts and every block, plant, creature, structure, ore and tool inside them.</li>
 <li><strong>Systems.</strong> Designed the brewing, spellcasting and regional trading systems that connect the biomes.</li>
 <li><strong>Art direction.</strong> Reviewed concept boards and models against the doc, and sorted out details like separate side-grass blocks and missing entries.</li></ul><div class="credits rv"><span class="chip">Concept art · <strong>NeoneLeon</strong></span><span class="chip">Block models · <strong>teusmalte</strong></span><span class="chip">Entity models · <strong>Benji</strong></span></div></div></section><section class="sec"><div class="side rv"><span class="num">03</span><h2>Biomes</h2></div><div class="main"><h3 class="rv">One theme per biome, light to shadow.</h3>
-<p class="rv">Good magic and evil magic, split across five places. Each concept board was drawn from the doc's list of trees, flora, blocks and creatures. Pick a biome.</p><div class="rv" data-sel="dcbi"><div class="path"><button type="button" data-k="lum" aria-pressed="false"><small>Light</small>Luminara Grove</button><button type="button" data-k="zep" aria-pressed="false"><small>Wind</small>Zephyr Peaks</button><button type="button" data-k="bli" aria-pressed="false"><small>Plague</small>Blightfen Swamps</button><button type="button" data-k="ash" aria-pressed="false"><small>Fire</small>Ashen Veil</button><button type="button" data-k="ecl" aria-pressed="false"><small>Shadow</small>Eclipsed Wilds</button></div><div class="pdet" data-out></div></div><script type="application/json" id="dcbi">{"lum": {"c": "#FACC15", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-luminara.webp\" alt=\"Luminara Grove concept board\"><div class=\"bt\"><h4>Luminara Grove \u00b7 Light</h4><p>A glowing sanctuary of healing springs, faerie villages and floating wisps. Ore: Starpetal Crystal. Station: Fae Cauldron.</p></div></div>"}, "zep": {"c": "#22D3EE", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-zephyr.webp\" alt=\"Zephyr Peaks concept board\"><div class=\"bt\"><h4>Zephyr Peaks \u00b7 Wind</h4><p>Cloud-piercing spires, floating islands and gliding puzzle temples. Ore: Skyrend Quartz. Station: Zephyr Pan.</p></div></div>"}, "bli": {"c": "#4ADE80", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-blightfen.webp\" alt=\"Blightfen Swamps concept board\"><div class=\"bt\"><h4>Blightfen Swamps \u00b7 Plague</h4><p>Black water, poison gas pockets, witch dens and sacrifice altars. Ore: Mireheart Core. Station: Bog Pot.</p></div></div>"}, "ash": {"c": "#F97316", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-ashen.webp\" alt=\"Ashen Veil concept board\"><div class=\"bt\"><h4>Ashen Veil \u00b7 Fire</h4><p>Charred ground, falling ash, firestorms and demon spires. Ore: Emberglass Shard. Station: Volcanic Grill.</p></div></div>"}, "ecl": {"c": "#A855F7", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-eclipsed.webp\" alt=\"Eclipsed Wilds concept board\"><div class=\"bt\"><h4>Eclipsed Wilds \u00b7 Shadow</h4><p>Good magic gone wrong: half-dead trees, cursed shrines and lightning with no storm. Ore: Umbracite Gem. Station: Shadow Steamer.</p></div></div>"}}</script></div></section><section class="sec"><div class="side rv"><span class="num">04</span><h2>Concept to model</h2></div><div class="main"><h3 class="rv">From a sketch to a Bedrock model.</h3>
+<p class="rv">Good magic and evil magic, split across five places. Each concept board was drawn from the doc’s list of trees, flora, blocks and creatures. Pick a biome.</p><div class="rv" data-sel="dcbi"><div class="path"><button type="button" data-k="lum" aria-pressed="false"><small>Light</small>Luminara Grove</button><button type="button" data-k="zep" aria-pressed="false"><small>Wind</small>Zephyr Peaks</button><button type="button" data-k="bli" aria-pressed="false"><small>Plague</small>Blightfen Swamps</button><button type="button" data-k="ash" aria-pressed="false"><small>Fire</small>Ashen Veil</button><button type="button" data-k="ecl" aria-pressed="false"><small>Shadow</small>Eclipsed Wilds</button></div><div class="pdet" data-out></div></div><script type="application/json" id="dcbi">{"lum": {"c": "#FACC15", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-luminara.webp\" alt=\"Luminara Grove concept board\"><div class=\"bt\"><h4>Luminara Grove \u00b7 Light</h4><p>A glowing sanctuary of healing springs, faerie villages and floating wisps. Ore: Starpetal Crystal. Station: Fae Cauldron.</p></div></div>"}, "zep": {"c": "#22D3EE", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-zephyr.webp\" alt=\"Zephyr Peaks concept board\"><div class=\"bt\"><h4>Zephyr Peaks \u00b7 Wind</h4><p>Cloud-piercing spires, floating islands and gliding puzzle temples. Ore: Skyrend Quartz. Station: Zephyr Pan.</p></div></div>"}, "bli": {"c": "#4ADE80", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-blightfen.webp\" alt=\"Blightfen Swamps concept board\"><div class=\"bt\"><h4>Blightfen Swamps \u00b7 Plague</h4><p>Black water, poison gas pockets, witch dens and sacrifice altars. Ore: Mireheart Core. Station: Bog Pot.</p></div></div>"}, "ash": {"c": "#F97316", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-ashen.webp\" alt=\"Ashen Veil concept board\"><div class=\"bt\"><h4>Ashen Veil \u00b7 Fire</h4><p>Charred ground, falling ash, firestorms and demon spires. Ore: Emberglass Shard. Station: Volcanic Grill.</p></div></div>"}, "ecl": {"c": "#A855F7", "html": "<div class=\"biome\"><img src=\"../../assets/arc/dc-board-eclipsed.webp\" alt=\"Eclipsed Wilds concept board\"><div class=\"bt\"><h4>Eclipsed Wilds \u00b7 Shadow</h4><p>Good magic gone wrong: half-dead trees, cursed shrines and lightning with no storm. Ore: Umbracite Gem. Station: Shadow Steamer.</p></div></div>"}}</script></div></section><section class="sec"><div class="side rv"><span class="num">04</span><h2>Concept to model</h2></div><div class="main"><h3 class="rv">From a sketch to a Bedrock model.</h3>
 <p class="rv">The concept boards fixed the shapes and colours early. The modellers then turned them into Blockbench models that sit next to vanilla mobs.</p><div class="cm rv" style="margin-bottom:12px"><figure><img loading="lazy" src="../../assets/arc/dc-c-1.webp" alt="Concept"><figcaption>Concept</figcaption></figure><span class="ar">→</span><figure><img loading="lazy" src="../../assets/arc/dc-m-1.webp" alt="Model"><figcaption>Model</figcaption></figure></div><div class="cm rv" style="margin-bottom:12px"><figure><img loading="lazy" src="../../assets/arc/dc-c-2.webp" alt="Concept"><figcaption>Concept</figcaption></figure><span class="ar">→</span><figure><img loading="lazy" src="../../assets/arc/dc-m-2.webp" alt="Model"><figcaption>Model</figcaption></figure></div><div class="cm rv" style="margin-bottom:12px"><figure><img loading="lazy" src="../../assets/arc/dc-c-3.webp" alt="Concept"><figcaption>Concept</figcaption></figure><span class="ar">→</span><figure><img loading="lazy" src="../../assets/arc/dc-m-3.webp" alt="Model"><figcaption>Model</figcaption></figure></div></div></section><section class="sec"><div class="side rv"><span class="num">05</span><h2>Assets</h2></div><div class="main"><h3 class="rv">Blocks, creatures and gear.</h3>
 <p class="sub rv">Blocks · Zephyr Peaks and Luminara Grove</p><div class="gal rv"><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-00.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-01.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-02.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-03.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-04.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-05.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-06.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-07.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-08.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-09.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-10.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-11.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-12.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-blk-13.webp" alt=""></figure></div>
 <p class="sub rv">Creatures</p><div class="gal rv"><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-00.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-01.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-02.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-03.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-04.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-05.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-06.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-07.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-08.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-09.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-10.webp" alt=""></figure><figure class="tile"><img loading="lazy" decoding="async" src="../../assets/arc/dc-ent-11.webp" alt=""></figure></div>
@@ -455,7 +470,7 @@ footer a{color:var(--ink)}
 <p class="rv">Spells are crafted in an Arcane Codex from three things: a spell core, a catalyst and a modifier. Each biome teaches one school of magic, and two schools can be fused into a hybrid. Pick one or two schools.</p>
 <div class="box rv" id="spell"><div class="spell"><div><div class="orb"></div><div class="els"><button type="button" data-e="Light" style="--c:#FDE68A"><i></i>Light</button><button type="button" data-e="Wind" style="--c:#67E8F9"><i></i>Wind</button><button type="button" data-e="Plague" style="--c:#86EFAC"><i></i>Plague</button><button type="button" data-e="Fire" style="--c:#FB923C"><i></i>Fire</button><button type="button" data-e="Shadow" style="--c:#C084FC"><i></i>Shadow</button></div></div><div data-spout></div></div></div>
 <script type="application/json" id="spelldata">{"el": {"Light": {"c": "#FDE68A", "biome": "Luminara Grove", "traits": "Healing, illusions, radiant bursts"}, "Wind": {"c": "#67E8F9", "biome": "Zephyr Peaks", "traits": "Mobility, air slashes, gliding"}, "Plague": {"c": "#86EFAC", "biome": "Blightfen Swamps", "traits": "Poison, decay, corruption"}, "Fire": {"c": "#FB923C", "biome": "Ashen Veil", "traits": "Explosions, flames, aggression"}, "Shadow": {"c": "#C084FC", "biome": "Eclipsed Wilds", "traits": "Stealth, confusion, spirit damage"}}, "spells": {"Wind": "Gust Step and Aether Arrows", "Light+Wind": "Starfall Barrage: rains homing stars down from above", "Fire+Wind": "Flare Dash: a mid-air dash that leaves a trail of fire", "Light": "Healing Beam", "Plague": "Blight Bloom"}}</script>
-<div class="cols2 rv" style="margin-top:16px"><div class="box"><h4>Brewing</h4><p style="margin:0">Each biome has its own cooking station, and there are no recipe books. A Portable Arcane Forge cooks anything anywhere, but cooking at the biome's own station boosts the effect.</p></div>
+<div class="cols2 rv" style="margin-top:16px"><div class="box"><h4>Brewing</h4><p style="margin:0">Each biome has its own cooking station, and there are no recipe books. A Portable Arcane Forge cooks anything anywhere, but cooking at the biome’s own station boosts the effect.</p></div>
 <div class="box"><h4>Travel items</h4><p style="margin:0">One per biome. Examples: the Verdant Glidecloak, a slower but easier Elytra; the Gale Tamer Anklets, a double-jump and air-dash; and the Mirewalker Lanternstaff.</p></div></div></div></section><section class="sec"><div class="side rv"><span class="num">07</span><h2>Thought process</h2></div><div class="main"><ol class="dec rv"><li><span>01</span><div><h4>Vanilla first</h4><p>Every block and creature had to look like it belonged in Minecraft. That kept the add-on approachable and kept the art team aligned.</p></div></li><li><span>02</span><div><h4>Each biome pays off</h4><p>Every biome has its own ore, tool set, station, school of magic and travel item, so players have a reason to visit all five.</p></div></li><li><span>03</span><div><h4>Craft anywhere, bonus at home</h4><p>The portable forge removes friction, and the biome-station bonus still rewards travel.</p></div></li><li><span>04</span><div><h4>Sound belongs to the place</h4><p>Ambient sound comes from the environment, not from mobs, so each biome has its own atmosphere.</p></div></li><li><span>05</span><div><h4>Concept boards before models</h4><p>Locking each biome on one board first meant the modellers built to a clear target.</p></div></li></ol></div></section>
 </div>
 </main>
@@ -712,5 +727,20 @@ if(rl){
 
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4834fab508314c3cac714a8b5e0414fa"}'></script>
+<script>
+/* press feedback: a small squish on tap/click, composes with existing transforms */
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const SEL=".btn,.mag,.card,.back,.chip,.tabs button,.tntg button,.room,.sw button,.floatnav a,.next,.xp a,button";
+  const down=e=>{const el=e.target.closest(SEL); if(!el||el.disabled) return;
+    el.getAnimations().filter(a=>a.id==="press").forEach(a=>a.cancel());
+    const a=el.animate([{scale:"1"},{scale:".97"}],{duration:150,easing:"ease-out",fill:"forwards"}); a.id="press";
+    const up=()=>{a.cancel(); el.animate([{scale:".97"},{scale:"1"}],{duration:220,easing:"cubic-bezier(.2,.9,.3,1.3)"});
+      ["pointerup","pointerleave","pointercancel"].forEach(t=>el.removeEventListener(t,up))};
+    ["pointerup","pointerleave","pointercancel"].forEach(t=>el.addEventListener(t,up,{once:true}));
+  };
+  addEventListener("pointerdown",down,{passive:true});
+})();
+</script>
 </body>
 </html>
