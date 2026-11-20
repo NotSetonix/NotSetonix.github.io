@@ -426,6 +426,15 @@ footer a{color:var(--ink)}
 .proof span{display:block; margin-top:6px; font-size:13px; color:var(--muted); line-height:1.35}
 @media (max-width:760px){.proof{grid-template-columns:1fr 1fr}}
 
+/* lightbox */
+main img{cursor:zoom-in} main .frame img, main a img, main .next img{cursor:auto}
+.lb{position:fixed; inset:0; z-index:9800; display:grid; place-items:center; padding:4vh 4vw; background:rgba(6,6,10,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); opacity:0; transition:opacity .25s ease; cursor:zoom-out}
+.lb.on{opacity:1}
+.lb img{max-width:100%; max-height:84vh; border-radius:14px; box-shadow:0 30px 80px -20px rgba(0,0,0,.7); transform:scale(.97); transition:transform .3s cubic-bezier(.16,1,.3,1); image-rendering:auto; background:#121217}
+.lb.on img{transform:none}
+.lb figcaption{margin-top:12px; color:#d4d4d8; font-size:14px; text-align:center}
+.lb button{position:absolute; top:18px; right:18px; width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,.25); background:rgba(20,20,26,.7); color:#fff; font-size:22px; cursor:pointer}
+
 @media (hover:hover) and (pointer:fine){/* custom cursor: gradient arrow */
 @media (hover:hover) and (pointer:fine){
   html, body{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238B97FF%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23C084FC%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 5 3, auto}
@@ -454,12 +463,12 @@ p,li,dd{text-wrap:pretty}
     <p class="lede fade d2">23 drivable vehicles and a full road-sign system. I produced it from docs to Marketplace release.</p>
   </div>
   <div class="proof fade d3"><div><b>23</b><span>vehicles in six groups</span></div><div><b>~279</b><span>pieces of content documented</span></div><div><b>25</b><span>acceptance criteria tested</span></div><div><b>Live</b><span>on the Marketplace since 2025</span></div></div>
-  <dl class="meta fade d3"><div><dt>Role</dt><dd>Executive Producer</dd></div><div><dt>Studio</dt><dd>Aurrora</dd></div><div><dt>Released</dt><dd>2025</dd></div><div><dt>Platform</dt><dd>Minecraft Bedrock Marketplace</dd></div></dl>
+  <dl class="meta fade d3"><div><dt>Role</dt><dd>Executive Producer</dd></div><div><dt>Studio</dt><dd>Aurrora</dd></div><div><dt>Type</dt><dd>Add-on</dd></div><div><dt>Status</dt><dd>Released 2025</dd></div></dl>
 </header>
 <div class="wrap">
 <section class="sec"><div class="side rv"><span class="num">01</span><h2>Overview</h2></div><div class="main"><h3 class="rv">23 vehicles, one road-sign system and 279 pieces of content.</h3>
 <p class="rv">Vehicles is an Aurrora add-on for the Bedrock Marketplace. Players can drive, ride, sail and fly 23 vehicles, from sports cars and an F1 car to a banana car and a UFO. A road-sign system covers the streets they drive on. I produced it as Executive Producer.</p>
-<p class="rv">The hard part was the amount of content, not any one feature. Every vehicle needed a model, textures, sounds, particles, item icons and crafting. So the first job was to get it all written down before anyone started building.</p><div class="stats rv"><div class="stat"><b>23</b><span>Vehicles in six groups</span></div><div class="stat"><b>~279</b><span>Pieces of content documented</span></div><div class="stat"><b>146</b><span>Road-sign textures</span></div><div class="stat"><b>25</b><span>Acceptance criteria tested</span></div></div></div></section><section class="sec"><div class="side rv"><span class="num">02</span><h2>My role</h2></div><div class="main"><h3 class="rv">Producer, from doc to release.</h3>
+<p class="rv">The hard part was the amount of content, not any one feature. Every vehicle needed a model, textures, sounds, particles, item icons and crafting. So the first job was to get it all written down before anyone started building.</p></div></section><section class="sec"><div class="side rv"><span class="num">02</span><h2>My role</h2></div><div class="main"><h3 class="rv">Producer, from doc to release.</h3>
 <ul class="ticks rv"><li><strong>Project docs.</strong> Wrote the overview, objectives, scope, and the functional requirements and acceptance criteria the team built and tested against.</li>
 <li><strong>Content guide.</strong> Documented every entity, item, block, sign, particle and sound for the team and for Microsoft’s reviewers.</li>
 <li><strong>Crafting design.</strong> Designed the recipes for all 23 vehicles and the tools.</li>
@@ -496,7 +505,7 @@ p,li,dd{text-wrap:pretty}
 <p class="rv" style="margin-top:24px">QA covered solo, 2-player and 4-player sessions on every platform, plus a pass on edge cases.</p></div></section><section class="sec"><div class="side rv"><span class="num">08</span><h2>Thought process</h2></div><div class="main"><ol class="dec rv"><li><span>01</span><div><h4>Document before building</h4><p>A list of 279 pieces turns into missed work fast. Counting and naming everything first meant nothing was skipped and QA had a checklist on day one.</p></div></li><li><span>02</span><div><h4>Give the hotbar back</h4><p>Vehicle controls take over the hotbar, so the player’s own items are saved on the way in and restored on the way out. Nothing gets lost.</p></div></li><li><span>03</span><div><h4>Split textures, don’t downgrade them</h4><p>The lead dev’s base pack plus optional high-res subpack kept the pack within the memory limit without making it look worse. I’m not a developer, so my job was to back the right call and document it.</p></div></li><li><span>04</span><div><h4>Say no early</h4><p>Fuel, damage, weapons and upgrades were cut on paper before production started. That kept the team on what makes vehicles fun.</p></div></li></ol></div></section>
 </div>
 </main>
-<a class="next" href="../ultimate-tnt/" data-next="ultimate-tnt"><div class="wrap"><div><small>Next case study</small><strong>Ultimate TNT <svg width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></div><div class="cover"><img decoding="async" src="../../assets/ka-ultimate-tnt-1200.webp" alt=""></div></div></a>
+<a class="next" href="../angels-and-demons/" data-next="angels-and-demons"><div class="wrap"><div><small>Next case study</small><strong>Angels & Demons <svg width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></div><div class="cover"><img decoding="async" src="../../assets/ka-angels-and-demons-1200.webp?v=3" alt=""></div></div></a>
 <footer><div class="wrap"><span>© 2026 Manith Liyanage (Setonix)</span><span><a href="#contact" data-mu="manith122002" data-md="gmail.com"><span class="etext">Email me</span></a></span></div></footer>
 <script>
 (function(){
@@ -745,6 +754,25 @@ if(rl){
       if(!pick.length) pick=[k]; render()});
     pick=["Wind"]; render();
   }
+})();
+
+/* ---------- lightbox for gallery images ---------- */
+(function(){
+  const ok=i=>i&&i.matches("main img")&&!i.closest(".frame,.next,.top,a");
+  let lb=null, last=null;
+  function close(){ if(!lb) return; lb.classList.remove("on"); const l=lb; lb=null; setTimeout(()=>l.remove(),250); last&&last.focus&&last.focus(); }
+  document.addEventListener("click",e=>{
+    const i=e.target.closest("img"); if(!ok(i)) return;
+    e.preventDefault(); last=i;
+    const cap=(i.closest("figure")?.querySelector("figcaption")?.textContent||i.alt||"").trim();
+    lb=document.createElement("div"); lb.className="lb"; lb.setAttribute("role","dialog"); lb.setAttribute("aria-modal","true"); lb.setAttribute("aria-label",cap||"Image");
+    lb.innerHTML='<figure style="margin:0;text-align:center"><img alt=""><figcaption></figcaption></figure><button type="button" aria-label="Close">×</button>';
+    lb.querySelector("img").src=i.currentSrc||i.src;
+    lb.querySelector("figcaption").textContent=cap; document.body.appendChild(lb);
+    requestAnimationFrame(()=>lb.classList.add("on")); lb.querySelector("button").focus();
+    lb.addEventListener("click",close);
+  });
+  addEventListener("keydown",e=>{if(e.key==="Escape") close()});
 })();
 
 </script>

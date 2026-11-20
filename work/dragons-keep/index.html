@@ -426,6 +426,15 @@ footer a{color:var(--ink)}
 .proof span{display:block; margin-top:6px; font-size:13px; color:var(--muted); line-height:1.35}
 @media (max-width:760px){.proof{grid-template-columns:1fr 1fr}}
 
+/* lightbox */
+main img{cursor:zoom-in} main .frame img, main a img, main .next img{cursor:auto}
+.lb{position:fixed; inset:0; z-index:9800; display:grid; place-items:center; padding:4vh 4vw; background:rgba(6,6,10,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); opacity:0; transition:opacity .25s ease; cursor:zoom-out}
+.lb.on{opacity:1}
+.lb img{max-width:100%; max-height:84vh; border-radius:14px; box-shadow:0 30px 80px -20px rgba(0,0,0,.7); transform:scale(.97); transition:transform .3s cubic-bezier(.16,1,.3,1); image-rendering:auto; background:#121217}
+.lb.on img{transform:none}
+.lb figcaption{margin-top:12px; color:#d4d4d8; font-size:14px; text-align:center}
+.lb button{position:absolute; top:18px; right:18px; width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,.25); background:rgba(20,20,26,.7); color:#fff; font-size:22px; cursor:pointer}
+
 @media (hover:hover) and (pointer:fine){/* custom cursor: gradient arrow */
 @media (hover:hover) and (pointer:fine){
   html, body{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238B97FF%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23C084FC%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 5 3, auto}
@@ -454,12 +463,12 @@ p,li,dd{text-wrap:pretty}
     <p class="lede fade d2">New dragons, shrines and a feeding item for a live Marketplace world, all built on systems the world already has.</p>
   </div>
   <div class="proof fade d3"><div><b>4.1★</b><span>from 170+ player reviews of the base world</span></div><div><b>6</b><span>new dragon variants</span></div><div><b>19</b><span>animations specced</span></div><div><b>2</b><span>shrines placed in Helmsfield</span></div></div>
-  <dl class="meta fade d3"><div><dt>Role</dt><dd>Executive Producer</dd></div><div><dt>Studio</dt><dd>Aurrora</dd></div><div><dt>Type</dt><dd>Content update</dd></div><div><dt>Platform</dt><dd>Minecraft Bedrock Marketplace</dd></div></dl>
+  <dl class="meta fade d3"><div><dt>Role</dt><dd>Executive Producer</dd></div><div><dt>Studio</dt><dd>Aurrora</dd></div><div><dt>Type</dt><dd>Content update</dd></div><div><dt>Status</dt><dd>In production</dd></div></dl>
 </header>
 <div class="wrap">
 <section class="sec"><div class="side rv"><span class="num">01</span><h2>Overview</h2></div><div class="main"><h3 class="rv">More dragons for a world that already has them.</h3>
 <p class="rv">Dragon’s Keep is a live Marketplace world set in the medieval town of Helmsfield. It already has two dragons: a big hostile one you can tame and ride, and a small Chinese Dragon you feed rabbits to grow. I’m producing its content update.</p>
-<p class="rv">The brief was more to find and tame, with <strong>no new AI, mechanics or progression</strong>. Everything new had to run on systems the world already has, so the update adds a lot without risking what players already love.</p><div class="stats rv"><div class="stat"><b>2</b><span>New Chinese Dragon colours</span></div><div class="stat"><b>2</b><span>New large dragons</span></div><div class="stat"><b>6</b><span>Large dragon colour variants</span></div><div class="stat"><b>19</b><span>Animations specced</span></div></div></div></section><section class="sec"><div class="side rv"><span class="num">02</span><h2>Chinese Dragons</h2></div><div class="main"><h3 class="rv">Black and White, found only at their shrines.</h3>
+<p class="rv">The brief was more to find and tame, with <strong>no new AI, mechanics or progression</strong>. Everything new had to run on systems the world already has, so the update adds a lot without risking what players already love.</p></div></section><section class="sec"><div class="side rv"><span class="num">02</span><h2>Chinese Dragons</h2></div><div class="main"><h3 class="rv">Black and White, found only at their shrines.</h3>
 <p class="rv">Two new colours on the existing Chinese Dragon model. They reuse its animations, AI, feeding, growth and taming, so the only new assets are a texture and a spawn egg each. Variants like this are low risk and pass Marketplace review reliably.</p>
 <div class="box rv"><canvas class="dragon-cv" id="cdragon" aria-label="Animated Chinese Dragon in the selected colour"></canvas><div class="sw" id="cdsw"><button type="button" data-n="Blue" data-b="#3B82F6" data-a="#93C5FD" data-e="#FDE68A" style="--s:#3B82F6" aria-pressed="false"><i></i>Blue</button><button type="button" data-n="Green" data-b="#16A34A" data-a="#86EFAC" data-e="#FDE68A" style="--s:#16A34A" aria-pressed="false"><i></i>Green</button><button type="button" data-n="Red" data-b="#DC2626" data-a="#FCA5A5" data-e="#FDE68A" style="--s:#DC2626" aria-pressed="false"><i></i>Red</button><button type="button" data-n="Black" data-b="#27272A" data-a="#52525B" data-e="#F87171" style="--s:#27272A" aria-pressed="true"><i></i>Black <span class=new>NEW</span></button><button type="button" data-n="White" data-b="#E7E5E4" data-a="#A8A29E" data-e="#38BDF8" style="--s:#E7E5E4" aria-pressed="false"><i></i>White <span class=new>NEW</span></button></div><p class="cap"><span id="cdname">Black</span>. White is off-white with neutral shading, so it never reads as a pale Blue.</p></div></div></section><section class="sec"><div class="side rv"><span class="num">03</span><h2>Two new tyrants</h2></div><div class="main"><h3 class="rv">One heavy and grounded, one fast with no wings.</h3>
 <p class="rv">Both large dragons use the existing large-dragon AI, riding and combat. What makes them different is how they look, how they move and how they attack.</p>
@@ -532,7 +541,7 @@ p,li,dd{text-wrap:pretty}
 </div><p class="cap">Only when killed by a player. Tamed dragons never drop it. All vanilla drops are kept.</p></div></div></div></section><section class="sec"><div class="side rv"><span class="num">07</span><h2>Thought process</h2></div><div class="main"><ol class="dec rv"><li><span>01</span><div><h4>Reuse first</h4><p>No new AI or mechanics. New content runs on systems that are already proven, which keeps both risk and review time low.</p></div></li><li><span>02</span><div><h4>Colours players can tell apart</h4><p>Black and White were picked because they stand out from Blue, Green and Red in every biome and light level.</p></div></li><li><span>03</span><div><h4>Scarcity with a reason</h4><p>Shrine-only spawns give the new colours a story and a place, instead of adding them to the random spawn pool.</p></div></li><li><span>04</span><div><h4>Fair in multiplayer</h4><p>A shrine that keeps spawning, capped at one wild dragon, means every player can tame one. One that spawns once would leave all but one player out.</p></div></li><li><span>05</span><div><h4>Name things for the player</h4><p>Marrow Bone tells you what it’s for before you use it.</p></div></li></ol></div></section>
 </div>
 </main>
-<a class="next" href="../angels-and-demons/" data-next="angels-and-demons"><div class="wrap"><div><small>Next case study</small><strong>Angels & Demons <svg width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></div><div class="cover"><img decoding="async" src="../../assets/ka-angels-and-demons-1200.webp?v=3" alt=""></div></div></a>
+<a class="next" href="../modern-home/" data-next="modern-home"><div class="wrap"><div><small>Next case study</small><strong>Modern Home <svg width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></div><div class="cover"><img decoding="async" src="../../assets/ka-modern-home-1200.webp" alt=""></div></div></a>
 <footer><div class="wrap"><span>© 2026 Manith Liyanage (Setonix)</span><span><a href="#contact" data-mu="manith122002" data-md="gmail.com"><span class="etext">Email me</span></a></span></div></footer>
 <script>
 (function(){
@@ -781,6 +790,25 @@ if(rl){
       if(!pick.length) pick=[k]; render()});
     pick=["Wind"]; render();
   }
+})();
+
+/* ---------- lightbox for gallery images ---------- */
+(function(){
+  const ok=i=>i&&i.matches("main img")&&!i.closest(".frame,.next,.top,a");
+  let lb=null, last=null;
+  function close(){ if(!lb) return; lb.classList.remove("on"); const l=lb; lb=null; setTimeout(()=>l.remove(),250); last&&last.focus&&last.focus(); }
+  document.addEventListener("click",e=>{
+    const i=e.target.closest("img"); if(!ok(i)) return;
+    e.preventDefault(); last=i;
+    const cap=(i.closest("figure")?.querySelector("figcaption")?.textContent||i.alt||"").trim();
+    lb=document.createElement("div"); lb.className="lb"; lb.setAttribute("role","dialog"); lb.setAttribute("aria-modal","true"); lb.setAttribute("aria-label",cap||"Image");
+    lb.innerHTML='<figure style="margin:0;text-align:center"><img alt=""><figcaption></figcaption></figure><button type="button" aria-label="Close">×</button>';
+    lb.querySelector("img").src=i.currentSrc||i.src;
+    lb.querySelector("figcaption").textContent=cap; document.body.appendChild(lb);
+    requestAnimationFrame(()=>lb.classList.add("on")); lb.querySelector("button").focus();
+    lb.addEventListener("click",close);
+  });
+  addEventListener("keydown",e=>{if(e.key==="Escape") close()});
 })();
 
 </script>

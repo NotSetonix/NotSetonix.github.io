@@ -426,6 +426,15 @@ footer a{color:var(--ink)}
 .proof span{display:block; margin-top:6px; font-size:13px; color:var(--muted); line-height:1.35}
 @media (max-width:760px){.proof{grid-template-columns:1fr 1fr}}
 
+/* lightbox */
+main img{cursor:zoom-in} main .frame img, main a img, main .next img{cursor:auto}
+.lb{position:fixed; inset:0; z-index:9800; display:grid; place-items:center; padding:4vh 4vw; background:rgba(6,6,10,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); opacity:0; transition:opacity .25s ease; cursor:zoom-out}
+.lb.on{opacity:1}
+.lb img{max-width:100%; max-height:84vh; border-radius:14px; box-shadow:0 30px 80px -20px rgba(0,0,0,.7); transform:scale(.97); transition:transform .3s cubic-bezier(.16,1,.3,1); image-rendering:auto; background:#121217}
+.lb.on img{transform:none}
+.lb figcaption{margin-top:12px; color:#d4d4d8; font-size:14px; text-align:center}
+.lb button{position:absolute; top:18px; right:18px; width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,.25); background:rgba(20,20,26,.7); color:#fff; font-size:22px; cursor:pointer}
+
 @media (hover:hover) and (pointer:fine){/* custom cursor: gradient arrow */
 @media (hover:hover) and (pointer:fine){
   html, body{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238B97FF%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23C084FC%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22none%22%20stroke%3D%22%230B0B12%22%20stroke-opacity%3D%22.55%22%20stroke-width%3D%223.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M5%203%20L5%2024%20L10.5%2018.6%20L14.2%2027%20L17.6%2025.5%20L14%2017.4%20L21.5%2017.4%20Z%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 5 3, auto}
@@ -454,12 +463,12 @@ p,li,dd{text-wrap:pretty}
     <p class="lede fade d2">A 44-piece luxury decor update for Aurrora’s most-reviewed world, plus a script module that fixes appliances coming apart after a reload.</p>
   </div>
   <div class="proof fade d3"><div><b>9,900+</b><span>player reviews of the base world</span></div><div><b>44</b><span>new decor pieces</span></div><div><b>1</b><span>script module for doors, gate and appliances</span></div><div><b>13</b><span>homes in the neighbourhood</span></div></div>
-  <dl class="meta fade d3"><div><dt>Role</dt><dd>Executive Producer</dd></div><div><dt>Studio</dt><dd>Aurrora</dd></div><div><dt>Type</dt><dd>Content update</dd></div><div><dt>Platform</dt><dd>Minecraft Bedrock Marketplace</dd></div></dl>
+  <dl class="meta fade d3"><div><dt>Role</dt><dd>Executive Producer</dd></div><div><dt>Studio</dt><dd>Aurrora</dd></div><div><dt>Type</dt><dd>Content update</dd></div><div><dt>Status</dt><dd>In production</dd></div></dl>
 </header>
 <div class="wrap">
 <section class="sec"><div class="side rv"><span class="num">01</span><h2>Overview</h2></div><div class="main"><h3 class="rv">A luxury decor set, and a fix for a bug players kept hitting.</h3>
 <p class="rv">Modern Home is an Aurrora roleplay world: a neighbourhood of thirteen modern homes, and the studio’s most-reviewed release. Internally the project is called Modern Millionaire. I’m the producer on its update.</p>
-<p class="rv">The update does two things. It adds 44 new pieces so players can furnish every room of a mansion. It also moves the garage doors, gate and kitchen appliances onto a script module, which fixes appliance parts coming loose after a world reload.</p><div class="stats rv"><div class="stat"><b>44</b><span>New placeable pieces</span></div><div class="stat"><b>7</b><span>Rooms covered</span></div><div class="stat"><b>5</b><span>New light sources</span></div><div class="stat"><b>1</b><span>Script module</span></div></div></div></section><section class="sec"><div class="side rv"><span class="num">02</span><h2>My role</h2></div><div class="main"><h3 class="rv">Docs, spec and coordination.</h3>
+<p class="rv">The update does two things. It adds 44 new pieces so players can furnish every room of a mansion. It also moves the garage doors, gate and kitchen appliances onto a script module, which fixes appliance parts coming loose after a world reload.</p></div></section><section class="sec"><div class="side rv"><span class="num">02</span><h2>My role</h2></div><div class="main"><h3 class="rv">Docs, spec and coordination.</h3>
 <ul class="ticks rv"><li><strong>Project docs.</strong> Wrote the overview, objectives, scope and acceptance criteria.</li><li><strong>Block implementation spec.</strong> Listed every piece with its ID, placement rules, light level and behaviour, so devs could build it without guessing.</li><li><strong>Coordination.</strong> Kept art and dev in step across models, textures and the script module.</li>
 <li><strong>Not the code.</strong> I’m a producer, not a developer. The script module and the reload fix were designed and written by the lead developer.</li></ul></div></section><section class="sec"><div class="side rv"><span class="num">03</span><h2>The collection</h2></div><div class="main"><h3 class="rv">44 pieces, sorted by room.</h3>
 <p class="rv">The pack itself doesn’t group anything. I sorted the pieces by room so the team could see the gaps and players could picture where each one goes. Pick a room to see what’s in it.</p>
@@ -497,7 +506,7 @@ p,li,dd{text-wrap:pretty}
 <p class="rv" style="margin-top:20px"><strong>Old worlds keep working.</strong> In the script, the Driveway Gate is now called the Sliding Gate, but old commands and saved gate states still work. Owners who update the pack don’t lose their builds.</p></div></section><section class="sec"><div class="side rv"><span class="num">07</span><h2>Thought process</h2></div><div class="main"><ol class="dec rv"><li><span>01</span><div><h4>Fix what players already own</h4><p>The reload bug affected existing owners, so the fix shipped in the same update as the new decor.</p></div></li><li><span>02</span><div><h4>Move to scripts</h4><p>The lead dev moved the doors, gate and appliances onto one script module, so they follow one set of rules in one place. I scoped the fix and wrote the acceptance criteria for it.</p></div></li><li><span>03</span><div><h4>Don’t break saved worlds</h4><p>Renaming the gate was worth doing only because old commands and saved states still work.</p></div></li><li><span>04</span><div><h4>No new tools to learn</h4><p>Every piece works with the existing Rotate Model and Hammer, and lights behave the way players expect.</p></div></li></ol></div></section>
 </div>
 </main>
-<a class="next" href="../dragons-keep/" data-next="dragons-keep"><div class="wrap"><div><small>Next case study</small><strong>Dragon’s Keep <svg width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></div><div class="cover"><img decoding="async" src="../../assets/ka-dragons-keep-1200.webp" alt=""></div></div></a>
+<a class="next" href="../vehicles/" data-next="vehicles"><div class="wrap"><div><small>Next case study</small><strong>Vehicles <svg width="0.7em" height="0.7em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong></div><div class="cover"><img decoding="async" src="../../assets/ka-vehicles-1200.webp?v=3" alt=""></div></div></a>
 <footer><div class="wrap"><span>© 2026 Manith Liyanage (Setonix)</span><span><a href="#contact" data-mu="manith122002" data-md="gmail.com"><span class="etext">Email me</span></a></span></div></footer>
 <script>
 (function(){
@@ -746,6 +755,25 @@ if(rl){
       if(!pick.length) pick=[k]; render()});
     pick=["Wind"]; render();
   }
+})();
+
+/* ---------- lightbox for gallery images ---------- */
+(function(){
+  const ok=i=>i&&i.matches("main img")&&!i.closest(".frame,.next,.top,a");
+  let lb=null, last=null;
+  function close(){ if(!lb) return; lb.classList.remove("on"); const l=lb; lb=null; setTimeout(()=>l.remove(),250); last&&last.focus&&last.focus(); }
+  document.addEventListener("click",e=>{
+    const i=e.target.closest("img"); if(!ok(i)) return;
+    e.preventDefault(); last=i;
+    const cap=(i.closest("figure")?.querySelector("figcaption")?.textContent||i.alt||"").trim();
+    lb=document.createElement("div"); lb.className="lb"; lb.setAttribute("role","dialog"); lb.setAttribute("aria-modal","true"); lb.setAttribute("aria-label",cap||"Image");
+    lb.innerHTML='<figure style="margin:0;text-align:center"><img alt=""><figcaption></figcaption></figure><button type="button" aria-label="Close">×</button>';
+    lb.querySelector("img").src=i.currentSrc||i.src;
+    lb.querySelector("figcaption").textContent=cap; document.body.appendChild(lb);
+    requestAnimationFrame(()=>lb.classList.add("on")); lb.querySelector("button").focus();
+    lb.addEventListener("click",close);
+  });
+  addEventListener("keydown",e=>{if(e.key==="Escape") close()});
 })();
 
 </script>
